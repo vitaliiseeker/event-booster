@@ -18,7 +18,7 @@ export class ImagesAPI {
         q: ImagesAPI.query,
         key: KEY,
         image_type: "photo",
-        orientation: "horizonta",
+        orientation: "horizontal",
         safesearch: true,
         per_page: ImagesAPI.per_page,
         page: ImagesAPI.page
