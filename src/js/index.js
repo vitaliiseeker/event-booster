@@ -35,7 +35,6 @@ async function onSearch(e) {
 
     createGallery(data);
     createGalleryLightbox();
-    console.log(data.hits);
 
   } catch (err) {
     console.log(err);
