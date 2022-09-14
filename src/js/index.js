@@ -31,7 +31,7 @@ async function onSearch(e) {
     const data = await ImagesAPI.searchImages(searchQuery);
     ImagesAPI.images_amount = data.totalHits;
     ImagesAPI.setPageAmount();
-    Notify.info(`Hooray! We found ${ImagesAPI.images_amount} images.`);
+    if (ImagesAPI.images_amount) Notify.info(`Hooray! We found ${ImagesAPI.images_amount} images.`);
 
     createGallery(data);
     createGalleryLightbox();
