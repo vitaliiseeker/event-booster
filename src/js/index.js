@@ -12,7 +12,10 @@ const refs = {
   loadMore: document.querySelector(".js-load-more"),
 }
 
-let gallery = null;
+const gallery = new SimpleLightbox('.gallery a', {
+  captionsData: "alt",
+  captionDelay: 250,
+});
 
 refs.form.addEventListener("submit", onSearch);
 refs.loadMore.addEventListener("click", onloadMore);
@@ -34,7 +37,7 @@ async function onSearch(e) {
     if (ImagesAPI.images_amount) Notify.info(`Hooray! We found ${ImagesAPI.images_amount} images.`);
 
     createGallery(data);
-    createGalleryLightbox();
+    gallery.refresh();
 
   } catch (err) {
     console.log(err);
@@ -74,13 +77,6 @@ function createGallery({ hits }) {
     Notify.info("We're sorry, but you've reached the end of search results.");
   }
   refs.gallery.insertAdjacentHTML("beforeend", markupGallery(hits));
-}
-
-function createGalleryLightbox() {
-  gallery = new SimpleLightbox('.gallery a', {
-    captionsData: "alt",
-    captionDelay: 250,
-  });
 }
 
 function clearGallery() {
