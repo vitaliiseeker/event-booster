@@ -1,70 +1,89 @@
 import '../css/styles.css';
-import { fetchImages } from "./modules/fetchImages";
+import { ImagesAPI } from "./modules/ImagesAPI";
 import { markupGallery } from "./modules/markup";
-import debounce from 'lodash.debounce';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 Notify.init({ position: 'right-top', width: '300px', fontSize: '20px' });
 
 const refs = {
-  form: document.querySelector("#search-form"),
+  form: document.querySelector(".search-form"),
   gallery: document.querySelector(".gallery"),
-  loadMore: document.querySelector(".load-more"),
+  loadMore: document.querySelector(".js-load-more"),
 }
 
-refs.form.addEventListener("submit", onSearch);
+let gallery = null;
 
-function onSearch(e) {
+refs.form.addEventListener("submit", onSearch);
+refs.loadMore.addEventListener("click", onloadMore);
+
+async function onSearch(e) {
   e.preventDefault();
+  refs.loadMore.classList.add("is-hidden");
+  clearGallery();
 
   const searchQuery = e.target.elements.searchQuery.value.trim();
   if (!searchQuery) return Notify.failure("Enter data in the search field");
 
-  fetchImages(searchQuery).then(showGallery).catch(onFetchError);
+  ImagesAPI.page = 1;
+
+  try {
+    const data = await ImagesAPI.searchImages(searchQuery);
+    ImagesAPI.images_amount = data.totalHits;
+    ImagesAPI.setPageAmount();
+    Notify.info(`Hooray! We found ${ImagesAPI.images_amount} images.`);
+
+    createGallery(data);
+    createGalleryLightbox();
+    console.log(data.hits);
+
+  } catch (err) {
+    console.log(err);
+  };
 }
 
-function showGallery(r) {
-  console.log(r);
-  console.log(r.total);
-  console.log(r.totalHits);
-  console.log(r.hits);
+async function onloadMore() {
+  ImagesAPI.incrementPage();
 
+  try {
+    const data = await ImagesAPI.searchImages("");
+    createGallery(data);
+    gallery.refresh();
 
+    const { height: cardHeight } = document
+      .querySelector(".gallery")
+      .firstElementChild.getBoundingClientRect();
 
+    window.scrollBy({
+      top: cardHeight * 1.75,
+      behavior: "smooth",
+    });
 
-  if (r.length) {
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+function createGallery({ hits }) {
+  if (!hits.length) {
     Notify.failure("Sorry, there are no images matching your search query. Please try again.");
     return;
   }
-  if (r.length > 10) {
-    Notify.info("Too many matches found. Please enter a more specific name.");
-    return;
+  refs.loadMore.classList.remove("is-hidden");
+  if (ImagesAPI.page >= ImagesAPI.page_amount) {
+    refs.loadMore.classList.add("is-hidden");
+    Notify.info("We're sorry, but you've reached the end of search results.");
   }
-
-  if (r.length > 1) {
-    refs.countryList.innerHTML = markupGallery(r);
-    return;
-  }
-
-  refs.countryInfo.innerHTML = markupGallery(r);
+  refs.gallery.insertAdjacentHTML("beforeend", markupGallery(hits));
 }
 
-function onFetchError() {
-  Notify.failure("Sorry, there are no images matching your search query. Please try again.");
+function createGalleryLightbox() {
+  gallery = new SimpleLightbox('.gallery a', {
+    captionsData: "alt",
+    captionDelay: 250,
+  });
 }
 
-function clearData(refs) {
-  refs.innerHTML = "";
+function clearGallery() {
+  refs.gallery.innerHTML = "";
 }
-
-
-
-// webformatURL - посилання на маленьке зображення для списку карток.
-// largeImageURL - посилання на велике зображення.
-// tags - рядок з описом зображення.Підійде для атрибуту alt.
-// likes - кількість лайків.
-// views - кількість переглядів.
-// comments - кількість коментарів.
-// downloads - кількість завантажень.
-// Якщо бекенд повертає порожній масив, значить нічого підходящого не було знайдено.У такому разі показуй повідомлення з текстом "Sorry, there are no images matching your search query. Please try again.".

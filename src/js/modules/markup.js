@@ -1,30 +1,30 @@
 export function markupGallery(data) {
 
-  return data.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) =>
-    `<div class="photo-card">
-      <img src="${webformatURL}" alt="${tags}" loading="lazy" />
-      <div class="info">
-        <p class="info-item">
-          <b>${likes}</b>
-        </p>
-        <p class="info-item">
-          <b>${views}</b>
-        </p>
-        <p class="info-item">
-          <b>${comments}</b>
-        </p>
-        <p class="info-item">
-          <b>${downloads}</b>
-        </p>
+  return data.reduce((acc, { webformatURL, largeImageURL, tags, likes, views, comments, downloads }) =>
+    acc +=
+    `<a class="gallery__item" href="${largeImageURL}">
+      <div class="photo-card">
+        <img class="gallery__image"
+          src="${webformatURL}" 
+          alt="${tags}" 
+          loading="lazy" 
+          width="320" 
+          height="210"
+        />
+        <div class="info">
+          <p class="info__item">
+            <b>likes</b>${likes}
+          </p>
+          <p class="info__item">
+            <b>views</b>${views}
+          </p>
+          <p class="info__item">
+            <b>comments</b>${comments}
+          </p>
+          <p class="info__item">
+            <b>downloads</b>${downloads}
+          </p>
+        </div>
       </div>
-    </div>
-    `);
+    </a>`, "");
 }
-
-// webformatURL - посилання на маленьке зображення для списку карток.
-//   largeImageURL - посилання на велике зображення.
-//     tags - рядок з описом зображення.Підійде для атрибуту alt.
-//       likes - кількість лайків.
-//         views - кількість переглядів.
-//           comments - кількість коментарів.
-//             downloads - кількість завантажень.
