@@ -18,7 +18,7 @@
       "group": "build",
       "problemMatcher": [],
       "label": "npm: build",
-      "detail": "parcel build src/*.html --public-url /goit-js-hw-11/"
+      "detail": "parcel build src/*.html --public-url /event-booster/"
     }
   ]
 }
