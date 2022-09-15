@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event-booster</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Event-booster</title>
+    <link rel="stylesheet" href="./sass/index.scss" />
+    <script type="module" src="./index.js"></script>
+  </head>
 
-  <link rel="stylesheet" href="./sass/index.scss" />
-  <script type="module" src="./index.js"></script>
-</head>
+  <body id="page">
+    <include src="./partials/header.html"></include>
 
-<body id="page">
+    <main>
+      <include src="./partials/hero.html"></include>
+    </main>
 
-  <include src="./partials/header.html"></include>
-
-  <main>
-
-    <include src="./partials/hero.html"></include>
-
-  </main>
-
-  <include src="./partials/footer.html"></include>
-  <include src="./partials/modal.html"></include>
-
-</body>
-
+    <include src="./partials/footer.html"></include>
+    <include src="./partials/modal_footer.html"></include>
+  </body>
 </html>
