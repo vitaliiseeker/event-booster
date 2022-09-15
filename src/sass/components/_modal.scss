@@ -1,0 +1,52 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 20;
+
+  @include mq(mobile-only) {
+    padding-top: 50px;
+  }
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow-y: scroll;
+
+  opacity: 1;
+
+  transition: opacity,
+  visibility var(--animation);
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.modal {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq(tablet) {
+    padding: 100px 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    transition: transform var(--animation);
+
+    .backdrop.is-hidden & {
+      transform: translate(-50%, -50%) scale(0.7);
+    }
+  }
+
+}
