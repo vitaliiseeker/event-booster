@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://vitaliiseeker.github.io/goit-js-hw-11",
+  "homepage": "https://vitaliiseeker.github.io/event-booster",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-11/"
+    "build": "parcel build src/*.html --public-url /event-booster/"
   },
   "repository": {
     "type": "git",
@@ -18,13 +18,9 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
-    "@vimeo/player": "^2.17.1",
     "axios": "^0.27.2",
-    "flatpickr": "^4.6.13",
-    "modern-normalize": "^1.1.0",
-    "notiflix": "^3.2.5",
-    "simplelightbox": "^2.10.3"
-  },
+    "modern-normalize": "^1.1.0"
+ },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
     "assert": "^2.0.0",
