@@ -34,11 +34,7 @@ export class EventsApi {
             }
         }
 
-        const searchResult = await baseRequest.get(endPoint, config);
-
-        const pagination = await searchResult.data;
-        const response = await searchResult.data._embedded.events;
-        return pagination;
+        return await EventsApi.checkResponse(endPoint, config);
     }
 
     static async fetchEventsDefault() {
@@ -52,9 +48,7 @@ export class EventsApi {
             }
         }
 
-        const searchResult = await baseRequest.get(endPoint, config);
-        const response = await searchResult.data._embedded.events;
-        return searchResult;
+        return await EventsApi.checkResponse(endPoint, config);
     }
 
     static async fetchEventsById(id) {
@@ -65,33 +59,31 @@ export class EventsApi {
         return response;
     }
 
-    // static async checkResponse(endPoint, config) {
-    //     try {
-    //         const searchResult = await baseRequest.get(endPoint, config);
-    //         if (condition) {
-                
-    //         }
+    static async checkResponse(endPoint, config) {
+        const searchResult = await baseRequest.get(endPoint, config);
+        const response = await searchResult.data;
 
-    //         const response = await searchResult.data._embedded.events;
-    //         return searchResult;
-    //     } catch (error) {
-            
-    //     }        
-    // }
+        if (!response._embedded) {
+            throw new Error("Oops, not found!");
+        }
+
+        const responseEvents = response._embedded.events;
+        // console.log(responseEvents);
+        return responseEvents;        
+    }
 
     static async getNextPage() {
-        console.log(EventsApi.links);
+        // console.log(EventsApi.links);
         const nextLink = await baseRequest.get(`${EventsApi.links.next.href}`);
-        console.log(nextLink);
         return nextLink;
     }
     
-    // static async getPrevPage() {
-    //     const prevLink = await baseRequest.get(`${this.links.prev}`);
-    //     console.log(prevLink);
-    //     return prevLink;
-    // }
+    static async getPrevPage() {
+        const prevLink = await baseRequest.get(`${EventsApi.links.prev.href}`);
+        return prevLink;
+    }
 };
 
-EventsApi.fetchEvents("dragon").then((item) => console.log(item));
+
+
 
