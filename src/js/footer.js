@@ -4,10 +4,10 @@ const refs = {
   modal: document.querySelector('[data-modal1]'),
 };
 
-refs.openModalBtn.addEventListener('click', openModal);
-refs.closeModalBtn.addEventListener('click', openModal);
+refs.openModalBtn.addEventListener('click', openCloseFooterModal);
+refs.closeModalBtn.addEventListener('click', openCloseFooterModal);
 
-function openModal() {
+function openCloseFooterModal() {
   refs.modal.classList.toggle('is-hidden');
 }
 
