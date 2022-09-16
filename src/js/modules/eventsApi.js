@@ -12,8 +12,14 @@ export class eventsApi {
     static totalPages = null;
     static size = 16;
     // static query = "";
-    
-    static async fetchEvents(query, country) {
+
+  /**
+   * 
+   * @param {string} query = "" (если ничего не передаете)
+   * @param {string} country 
+   * @returns result response (array);
+   */  
+    static async fetchEvents(query = "", country = "") {
         const endPoint = "events.json";
 
         const config = {
@@ -30,3 +36,4 @@ export class eventsApi {
         return response;
     }
 };
+
