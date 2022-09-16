@@ -15,7 +15,7 @@ export class eventsApi {
 
   /**
    * 
-   * @param {string} query = "" (если ничего не передаете)
+   * @param {string} query "" (if you don't pass the argument)
    * @param {string} country 
    * @returns result response (array);
    */  
