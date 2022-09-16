@@ -1,3 +1,7 @@
+main {
+  background-image: url(../images/background/bg-body.png);
+}
+
 .gallery {
   display: grid;
   justify-items: center;
@@ -17,10 +21,10 @@
 .card {
   width: 130px;
   height: 240px;
-  background-color: rgb(180, 180, 180);
+  //   background-color: rgb(180, 180, 180);
   position: relative;
   text-align: center;
-
+  position: relative;
   @include mq(tablet) {
     width: 152px;
     height: 281px;
@@ -31,10 +35,12 @@
     height: 437px;
   }
 }
-.card__img {
+.card__img,
+.card__img-sec {
+  //   position: absolute;
   width: 120px;
   height: 150px;
-  background-color: rgb(250, 146, 146);
+  //   background-color: rgb(126, 126, 126);
   border-radius: 50% 0;
   margin-top: 10px;
 
@@ -47,6 +53,11 @@
     width: 267px;
     height: 337px;
   }
+}
+
+.card__img-sec {
+  background-color: rgb(126, 126, 126);
+  opacity: 0.3;
 }
 
 .card__decore {
@@ -68,12 +79,14 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 1.2;
+  color: #dc56c5;
   @include mq(tablet) {
     font-size: 16px;
   }
 }
 .card__date {
   font-size: 14px;
+  color: #fff;
   @include mq(tablet) {
     font-size: 16px;
   }
@@ -81,6 +94,7 @@
 .card__place {
   font-weight: 600;
   font-size: 12px;
+  color: #fff;
   @include mq(tablet) {
     font-size: 14px;
   }
@@ -100,6 +114,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 50% 0;
+  color: #fff;
 }
 
 .active {
