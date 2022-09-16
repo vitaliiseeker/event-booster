@@ -5,6 +5,9 @@
 
   z-index: 20;
 
+  background-color: var(--backdrop-bg-color);
+  backdrop-filter: blur(1.5px);
+
   @include mq(mobile-only) {
     padding-top: 50px;
   }
