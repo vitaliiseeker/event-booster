@@ -3,21 +3,17 @@
   top: 0;
   left: 0;
 
-  z-index: 20;
-
-  @include mq(mobile-only) {
-    padding-top: 50px;
-  }
+  z-index: 10;
 
   width: 100vw;
   height: 100vh;
 
-  overflow-y: scroll;
+  // overflow-y: scroll;
 
   opacity: 1;
 
   transition: opacity,
-  visibility var(--animation);
+    visibility var(--animation);
 
   &.is-hidden {
     opacity: 0;
