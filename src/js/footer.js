@@ -1,48 +1,37 @@
+// import { openCloseModal, isKeyPressed } from './modal.js';
+
 const refs = {
-  openModalBtn: document.querySelector('[data-modal-open1]'),
-  closeModalBtn: document.querySelector('[data-modal-close1]'),
-  modal: document.querySelector('[data-modal1]'),
+  openModalBtn: document.querySelector('[data-modalFoter-open]'),
+  closeModalBtn: document.querySelector('[data-modalFoter-close]'),
+  modal: document.querySelector('[data-modalFooter]'),
 };
 
-refs.openModalBtn.addEventListener('click', openCloseFooterModal);
-refs.closeModalBtn.addEventListener('click', openCloseFooterModal);
-
-function openCloseFooterModal() {
-  refs.modal.classList.toggle('is-hidden');
-}
-
-// document.body.addEventListener(
-//   'keyup',
-//   function (e) {
-//     var key = e.keyCode;
-
-//     if (key == 27) {
-//       refs.modal.classList.toggle('is-hidden');
-//     }
-
-//     // ____________________________________________
-
-//     const click = e.composedPath().includes(modal);
-//     if (!click) {
-//       refs.modal.classList.toggle('is-hidden');
-//     }
-//   },
-//   false
-// );
-
-// const box = document.querySelector('.box');
-// document.addEventListener('click', e => {
-//   const click = e.composedPath().includes(box);
-//   if (!click) {
-//     box.style.display = 'none';
-//   }
-// });
-
-document.addEventListener('keydown', isKeyPressed);
+refs.openModalBtn.addEventListener('click', openModal);
+refs.closeModalBtn.addEventListener('click', closeModal);
 
 function isKeyPressed(evt) {
   if (evt.code === 'Escape') {
-    refs.modal.classList.toggle('is-hidden');
-    document.removeEventListener('keydown', isKeyPressed);
+    closeModal();
   }
 }
+
+function openModal() {
+  refs.modal.classList.remove('is-hidden');
+  document.addEventListener('keydown', isKeyPressed);
+}
+
+function closeModal() {
+  refs.modal.classList.add('is-hidden');
+  document.removeEventListener('keydown', isKeyPressed);
+}
+
+document.addEventListener('click', function (e) {
+  const target = e.target;
+  const its_btnMenu = target == refs.openModalBtn;
+  const menu_is_active = refs.modal.classList.contains('is-hidden');
+  const its_menu = target == refs.modal;
+
+  if (!its_btnMenu && !menu_is_active && its_menu) {
+    closeModal();
+  }
+});
