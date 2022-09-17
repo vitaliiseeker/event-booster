@@ -1,0 +1,40 @@
+<div class="container">
+  <form class="search-form js-search-form">
+    <div class="field">
+      <input
+        class="search-input js-search-event"
+        type="text"
+        placeholder="Start searching"
+      />
+      <button class="search-btn js-search-btn" type="submit">
+        <svg class="search-icon" width="12" height="12">
+          <use href="./images/sprite.svg#search-icon"></use>
+        </svg>
+      </button>
+    </div>
+
+    <div class="field">
+      <select
+        class="select-country js-select-country"
+        id="select"
+        name="selectInput"
+        tabindex="1"
+        data-choice="active"
+      >
+        <option
+          class="value-country js-value-country"
+          selected
+          value=""
+          selected
+        >
+          Choose country
+        </option>
+      </select>
+      <label class="search-lbl">
+        <svg class="search-icon" width="15" height="10">
+          <use href="./images/sprite.svg#polygon"></use>
+        </svg>
+      </label>
+    </div>
+  </form>
+</div>

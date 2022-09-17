@@ -1,0 +1,111 @@
+.header {
+  //   display: flex;
+  position: relative;
+  padding: 40px 0 48px;
+  background-image: url('../images/header/logo-d.png');
+  background-size: 229px 193px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  //   background-size: 193px 229px;
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('../images/header/logo-d@2x.png');
+  }
+
+  @include mq(tablet-only) {
+    padding-bottom: 40px;
+
+    background-image: url('../images/header/logo-t.png');
+    background-size: 180px 151px;
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('../images/header/logo-t@2x.png');
+    }
+  }
+  @include mq(mobile-only) {
+    padding: 80px 0 24px;
+
+    background-image: url('../images/header/logo-m.png');
+    background-size: 108px 91px;
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('../images/header/logo-m@2x.png');
+    }
+  }
+}
+
+.header__title {
+  position: relative;
+  margin: 0 auto;
+  max-width: 608px;
+
+  font-weight: 900;
+  font-size: 50px;
+  line-height: calc(61 / 50);
+  text-align: center;
+
+  color: var(--accent-color);
+  @include mq(mobile-only) {
+    max-width: 250px;
+
+    font-size: 18px;
+    line-height: calc(22 / 18);
+  }
+  @include mq(tablet-only) {
+    max-width: 400px;
+    font-size: 30px;
+    line-height: calc(37 / 30);
+  }
+
+  & span {
+    text-shadow: 0.5px 0.5px 2px rgb(255 13 190 / 80%),
+      -2px 0.5px 2px rgb(255 13 190 / 55%), 0 -10px 50px, 0 0 0.01em #dc56c5,
+      0 2px 1px #000;
+
+    // color: gray;
+    display: inline-block;
+    transition: all 0.5s;
+    animation: animate 3s infinite;
+  }
+
+  & span:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  & span:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+
+  & span:nth-child(3) {
+    animation-delay: 1s;
+  }
+
+  & span:nth-child(4) {
+    animation-delay: 1.5s;
+  }
+
+  & span:nth-child(5) {
+    animation-delay: 2s;
+  }
+
+  & span:nth-child(6) {
+    animation-delay: 2.5s;
+  }
+
+  @keyframes animate {
+    0% {
+      color: var(--accent-color);
+      transform: translateY(0);
+      margin: 0;
+    }
+    10% {
+      text-shadow: 1px 1px 3px rgb(255 13 190 / 80%),
+        -1px 1px 3px rgb(255 13 190 / 55%), 0 -15px 70px, 0 0 0.01em #dc56c5,
+        0 10px 3px #000;
+    }
+  }
+}
