@@ -12,20 +12,32 @@ export class EventsApi {
     static totalPages = null;
     static size = 16;
     static baseEndPoint = "discovery/v2/";
+    static query = "";
+    static country = "";
 
-  /**
-   *
-   * @param {string} query "" (if you don't pass the argument)
-   * @param {string} country
-   * @returns result response (array);
-   */  
-    static async fetchEvents(query = "", country = "") {
+    /**
+     * 
+     * @param {number} page 0 (if the first query)
+     * @param {string} query "" (if you don't pass the argument)
+     * @param {string} country 
+     * @returns response (array)
+     */
+    static async fetchEvents(page = "", query = "", country = "") {
         const endPoint = `${EventsApi.baseEndPoint}events.json`;
+        if (page) {
+            EventsApi.page = page;
+        }
+        if (query) {
+            EventsApi.query = query;
+        }
+        if (country) {
+            EventsApi.country = country;
+        }
 
         const config = {
             params: {
-                keyword: query,
-                countryCode: country,
+                keyword: EventsApi.query,
+                countryCode: EventsApi.country,
                 size: EventsApi.size,
                 page: EventsApi.page,
             }
@@ -53,11 +65,8 @@ export class EventsApi {
         const responseEvents = response._embedded.events;
         return responseEvents;        
     }
-
-    static setPage(page) {
-        EventsApi.page = page;
-    }
 };
+
 
 
 

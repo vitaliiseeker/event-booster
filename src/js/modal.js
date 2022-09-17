@@ -1,3 +1,5 @@
 import './modules/eventsApi';
-// import code from './data/countries.json';
+// импорт на функцию создания разметки модалки
+// import { createMarkupEventModal } from './markupEventModal';
+
 
