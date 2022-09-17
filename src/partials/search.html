@@ -12,29 +12,47 @@
     </button>
   </div>
   <div class="search-div">
-    <input
+    <!-- <input
       class="search-input js-input-country"
       id="country"
       type="text"
       placeholder="Select country"
-    />
+    /> -->
 
     <div id="samplePage"></div>
     <select
       class="select-country js-select-country"
       id="select"
-      name="select"
+      name="selectInput"
       tabindex="1"
       data-choice="active"
     >
-      <option class="js-value-country" value=""></option>
-    </select>
-
-    <button class="search-btn js-select-btn" type="click">
       <svg class="search-icon" width="15" height="10">
         <use href="./images/sprite.svg#polygon"></use>
       </svg>
-    </button>
+
+      <option class="value-country js-value-country" selected value="" selected>
+        Select country
+      </option>
+
+      <!-- <option class="js-value-country" value=""></option> -->
+    </select>
+    <!-- <label>
+          <svg class="search-icon" width="15" height="10">
+        <use href="./images/sprite.svg#polygon"></use>
+      </svg></label></label> -->
+
+    <!-- <button class="search-btn js-select-btn" type="click">
+      <svg class="search-icon" width="15" height="10">
+        <use href="./images/sprite.svg#polygon"></use>
+      </svg>
+    </button> -->
+
+    <label class="search-lbl">
+      <svg class="search-icon" width="15" height="10">
+        <use href="./images/sprite.svg#polygon"></use>
+      </svg>
+    </label>
   </div>
 </form>
 <!-- <script type="text/javascript" src="./js/data/countries.json"></script> -->
