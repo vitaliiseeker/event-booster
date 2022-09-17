@@ -1,52 +1,22 @@
-* {
-  box-sizing: border-box;
-}
-
-:root {
-  --fields-text-color: #939393;
-  --pink-color: #dc56c5;
-}
-
-input,
-button {
-  border: none;
-  background: transparent;
-}
-
-input:active,
-:hover,
-:focus {
-  outline: 0;
-  outline-offset: 0;
-}
-
 .search-form {
   display: flex;
   flex-direction: column;
   gap: 24px;
-
-  background-color: rgb(106, 110, 210);
 
   @include mq(tablet) {
     flex-direction: row;
     justify-content: center;
     gap: 32px;
   }
-
-  @include mq(desktop) {
-    flex-direction: row;
-    justify-content: center;
-    gap: 32px;
-  }
 }
 
-.search-div {
+.field {
   position: relative;
-  width: 280px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  width: 280px;
 
+  background: var(--search-form-bg-color);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
 
   @include mq(tablet) {
@@ -60,46 +30,94 @@ input:active,
 }
 
 .search-input {
+  padding: 0 32px;
   width: 100%;
   height: 40px;
-  padding-left: 32px;
-  padding-right: 14px;
-  border-radius: 20px;
-
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  color: #ffffff;
 
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
 
-  color: var(--fields-text-color);
+  color: var(--secondary-text-color);
+  background: var(--search-form-bg-color);
+  backdrop-filter: blur(10px);
+
+  border: none;
+  border-radius: 20px;
 }
 
 .search-btn {
-  height: 40px;
-  width: 40px;
   position: absolute;
   top: 0;
-  right: 0;
-  cursor: pointer;
-  outline: none;
+  right: 18px;
+
   padding: 0;
+  width: 40px;
+  height: 40px;
+
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .search-icon {
-  fill: var(--fields-text-color);
+  fill: var(--secondary-text-color);
 }
 
-.search-div:hover .search-icon {
-  fill: var(--pink-color);
+.field:hover .search-icon {
+  fill: var(--accent-color);
 }
 
 .search-input:hover::-webkit-input-placeholder {
-  color: var(--pink-color);
+  color: var(--accent-color);
 }
 
 .search-input:focus {
-  border: 1px solid var(--pink-color);
+  border: 1px solid var(--accent-color);
+}
+
+.search-input:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.select-country {
+  position: relative;
+  padding: 0 32px;
+
+  width: 100%;
+  height: 40px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+
+  color: var(--secondary-text-color);
+
+  background: var(--search-form-bg-color);
+  backdrop-filter: blur(10px);
+
+  appearance: none;
+  overflow: hidden;
+  border: none;
+  border-radius: 20px;
+}
+
+.select-country:hover::input-placeholder {
+  color: var(--accent-color);
+}
+
+.select-country:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.search-lbl {
+  position: absolute;
+  top: 10px;
+  right: 32px;
+  padding: 0;
+  outline: none;
 }
