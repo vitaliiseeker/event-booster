@@ -1,7 +1,11 @@
-<form class="search-form" id="search-form">
+<form class="search-form js-search-form">
   <div class="search-div">
-    <input class="search-input" type="text" placeholder="Start searching" />
-    <button class="search-btn search-btn-js" type="submit">
+    <input
+      class="search-input js-search-event"
+      type="text"
+      placeholder="Start searching"
+    />
+    <button class="search-btn js-search-btn" type="submit">
       <svg class="search-icon" width="12" height="12">
         <use href="./images/sprite.svg#search-icon"></use>
       </svg>
@@ -9,7 +13,7 @@
   </div>
   <div class="search-div">
     <input
-      class="search-input select-country-js"
+      class="search-input js-input-country"
       id="country"
       type="text"
       placeholder="Select country"
@@ -17,16 +21,16 @@
 
     <div id="samplePage"></div>
     <select
-      class="select-country"
+      class="select-country js-select-country"
       id="select"
       name="select"
       tabindex="1"
       data-choice="active"
     >
-      <option class="value-country" value=""></option>
+      <option class="js-value-country" value=""></option>
     </select>
 
-    <button class="search-btn select-btn-js" type="click">
+    <button class="search-btn js-select-btn" type="click">
       <svg class="search-icon" width="15" height="10">
         <use href="./images/sprite.svg#polygon"></use>
       </svg>

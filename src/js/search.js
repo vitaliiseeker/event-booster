@@ -1,6 +1,6 @@
 import { EventsApi } from './modules/eventsApi';
 
-import code from './data/countries.json';
+import countries from './data/countries.json';
 
 // import axios from 'axios';
 
@@ -42,20 +42,36 @@ import code from './data/countries.json';
 //   }
 // }
 
-const searchBox = document.querySelector('.search-form');
-const searchInput = document.querySelector('.search-input');
-const selectCountry = document.querySelector('.select-country');
-const selectInput = document.querySelector('.select-country-js');
-const valuecountry = document.querySelector('.value-country');
-const selectBtn = document.querySelector('.select-btn-js');
+const refSearchForm = document.querySelector('.js-search-form');
+const refSearchEvent = document.querySelector('.js-search-event');
+const refSearchCountry = document.querySelector('.js-input-country');
+const refSelectCountry = document.querySelector('.js-select-country');
+const refValuecountry = document.querySelector('.js-value-country');
+const refSelectBtn = document.querySelector('.js-select-btn');
 
-searchBox.addEventListener('submit', onSearch);
+//const searchBtn = document.querySelector('.search-btn');
+
+console.log(refValuecountry);
+const markupEvents = EventsApi.fetchEvents();
+//renderEvents(markupEvents);  //вызов функции рендера по умолчанию
+//console.log(test);
+refSearchForm.addEventListener('submit', onSearch);
 
 function onSearch(e) {
   e.preventDefault();
-  const query = searchInput.value;
+  //const query = e.currentTarget.elements.search - input.value;
+  const query = refSearchEvent.value;
+  const country = refSelectCountry.value;
+  console.log(query);
+  console.log(country);
+  // if (refSearchFormValue === '') {
+  //   console.log('Please, input event!');
+  //   return;
+  // }
+  // eventsApi.query = e.currentTarget.elements.searchInput.value;
+  //   const resultEvents = eventsApi.fetchEvents(refSearchFormValue);
 
-  EventsApi.fetchEvents(query)
+  EventsApi.fetchEvents(query, country)
     .then(events => renderEvents(events))
     .catch(error => {
       console.log('Show ooops!');
@@ -63,31 +79,45 @@ function onSearch(e) {
     .finally(() => console.log('Promise settled clear input????'));
 }
 
-function renderEvents(events) {
+function renderEvents(markupEvents) {
   // рендер
-  console.log(events);
+  console.log(markupEvents);
 }
 
 //--------add country to select
-selectBtn.addEventListener('click', onSelect);
+refSelectBtn.addEventListener('click', onSelect);
 
 function onSelect() {
-  //   let z = document.getElementById('select').value;
-  //   console.log(z);
-  //   let searchCountryValue = selectCountry.value;
-  //   console.log(searchCountryValue);
-  //   EventsApi.fetchEvents('', 'ca')
-  //     .then(events => console.log(events))
-  //     .catch(error => {
-  //       console.log('Show ooops!');
-  //     })
-  //     .finally(() => console.log('Promise settled clear input????'));
+  console.log(refSelectCountry.value);
+
+  let refSearchCountryValue = refSearchCountry.value;
+  console.log(refSearchCountryValue);
+
+  EventsApi.fetchEvents('', 'ca')
+    .then(events => console.log(events))
+    .catch(error => {
+      console.log('Show ooops!');
+    })
+    .finally(() => console.log('Promise settled clear input????'));
 }
 
-const markupSelect = code
+const markupSelect = countries
   .map(el => `<option value="${el.code}">${el.name}</option>`)
   .join('');
 
-selectCountry.insertAdjacentHTML('beforeend', markupSelect);
-// selectInput.value = selectCountry.value;
-// console.log(selectInput.value);
+refSelectCountry.insertAdjacentHTML('beforeend', markupSelect);
+refSearchCountry.value = refSelectCountry.value;
+console.log(refSearchCountry.value);
+
+refSearchCountry.addEventListener('change', aaa);
+function aaa() {
+  refSearchCountry.value = refSearchCountry.value;
+  // console.log(refSearchCountry.outerText);
+}
+
+refSearchCountry.addEventListener('input', event => {
+  let a = event.currentTarget.value;
+  console.log(a);
+});
+
+// const country = то что вводит пользователь
