@@ -21,10 +21,18 @@ main {
 .card {
   width: 130px;
   height: 240px;
-  //   background-color: rgb(180, 180, 180);
+  border-radius: 50% 0;
   position: relative;
   text-align: center;
   position: relative;
+  cursor: pointer;
+  transition: var(--animation);
+
+  &:hover {
+    -webkit-box-shadow: 25px 23px 48px -7px rgba(220, 86, 197, 0.72);
+    box-shadow: 25px 23px 48px -7px rgba(220, 86, 197, 0.72);
+  }
+
   @include mq(tablet) {
     width: 152px;
     height: 281px;
@@ -35,12 +43,11 @@ main {
     height: 437px;
   }
 }
+
 .card__img,
 .card__img-sec {
-  //   position: absolute;
   width: 120px;
   height: 150px;
-  //   background-color: rgb(126, 126, 126);
   border-radius: 50% 0;
   margin-top: 10px;
 
@@ -55,16 +62,11 @@ main {
   }
 }
 
-.card__img-sec {
-  background-color: rgb(126, 126, 126);
-  opacity: 0.3;
-}
-
 .card__decore {
   width: 120px;
   height: 112px;
   border-radius: 50% 0;
-  outline: 1px solid #dc56c5;
+  outline: 1px solid var(--accent-color);
   opacity: 30%;
   position: absolute;
   top: 0;
@@ -79,14 +81,14 @@ main {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.2;
-  color: #dc56c5;
+  color: var(--accent-color);
   @include mq(tablet) {
     font-size: 16px;
   }
 }
 .card__date {
   font-size: 14px;
-  color: #fff;
+  color: var(--light-color);
   @include mq(tablet) {
     font-size: 16px;
   }
@@ -94,10 +96,14 @@ main {
 .card__place {
   font-weight: 600;
   font-size: 12px;
-  color: #fff;
+  color: var(--light-color);
   @include mq(tablet) {
     font-size: 14px;
   }
+}
+
+.card__icon {
+  fill: var(--light-color);
 }
 
 .pagination {
@@ -107,17 +113,21 @@ main {
   padding: 40px 0;
 }
 
-.pagination__item {
-  padding: 3px;
-  width: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.pagination__btn {
   border-radius: 50% 0;
-  color: #fff;
+  width: 30px;
+  height: 30px;
+  color: var(--light-color);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination__btn:hover {
+  color: var(--accent-color);
 }
 
 .active {
-  outline: 1px solid #dc56c5;
-  color: #dc56c5;
+  outline: 1px solid var(--accent-color);
+  color: var(--accent-color);
 }
