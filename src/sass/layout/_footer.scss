@@ -21,7 +21,7 @@ footer {
         height: 100px;
         display: flex;
         align-items: flex-end;
-        
+
         background-position: bottom 0 left 22px, bottom 0 left 48px, bottom 0 left 85px,
             bottom 0 right 85px;
         background-repeat: no-repeat;
@@ -34,8 +34,9 @@ footer {
     }
 }
 
-.developers {
+.btn-developers {
     background: transparent;
     border: 0px;
     color: #939393;
+    cursor: pointer;
 }
