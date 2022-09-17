@@ -1,18 +1,36 @@
 <form class="search-form" id="search-form">
   <div class="search-div">
     <input class="search-input" type="text" placeholder="Start searching" />
-    <button class="search-btn" type="submit">
+    <button class="search-btn search-btn-js" type="submit">
       <svg class="search-icon" width="12" height="12">
         <use href="./images/sprite.svg#search-icon"></use>
       </svg>
     </button>
   </div>
   <div class="search-div">
-    <input class="search-input" type="text" placeholder="Start searching" />
-    <button class="search-btn" type="submit">
+    <input
+      class="search-input select-country-js"
+      id="country"
+      type="text"
+      placeholder="Select country"
+    />
+
+    <div id="samplePage"></div>
+    <select
+      class="select-country"
+      id="select"
+      name="select"
+      tabindex="1"
+      data-choice="active"
+    >
+      <option class="value-country" value=""></option>
+    </select>
+
+    <button class="search-btn select-btn-js" type="click">
       <svg class="search-icon" width="15" height="10">
         <use href="./images/sprite.svg#polygon"></use>
       </svg>
     </button>
   </div>
 </form>
+<!-- <script type="text/javascript" src="./js/data/countries.json"></script> -->
