@@ -8,10 +8,18 @@ const refValuecountry = document.querySelector('.js-value-country');
 
 export const markupEvents = EventsApi.fetchEvents();
 markupEvents.then(data => renderEvents(data));
-// console.log(markupEvents);
-// markupEvents.then(events => renderEvents(events)); //вызов функции рендера по умолчанию
+//console.log(markupEvents);
+
+const markupSelect = countries
+  .map(el => `<option value="${el.code}">${el.name}</option>`)
+  .join('');
+
+refSelectCountry.insertAdjacentHTML('beforeend', markupSelect);
+
+markupEvents.then(events => renderEvents(events)); //вызов функции рендера по умолчанию
 //console.log(test);
 refSearchForm.addEventListener('submit', onSearch);
+refSearchForm.addEventListener('change', onSearch);
 console.log(markupEvents);
 function onSearch(e) {
   e.preventDefault();
