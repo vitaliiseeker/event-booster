@@ -12,14 +12,15 @@ const activeBtn = document.getElementsByClassName('active');
 // console.log(EventsApi.page);
 
 paginationPage.addEventListener('click', e => {
-  EventsApi.fetchEvents(e.target.outerText - 1).then(events =>
-    renderEvents(events)
-  );
-  switchBtn(e);
-  main.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  EventsApi.page = e.target.outerText - 1;
+  EventsApi.fetchEvents(EventsApi.page).then(events => renderEvents(events));
+  selectPage(e);
+  document
+    .querySelector('body')
+    .scrollIntoView({ block: 'start', behavior: 'smooth' });
 });
 
-function switchBtn(e) {
+function selectPage(e) {
   if (e.target.tagName === 'BUTTON') {
     activeBtn[0].classList.remove('active');
     e.target.classList.add('active');
