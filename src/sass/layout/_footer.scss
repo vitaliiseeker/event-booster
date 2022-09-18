@@ -13,6 +13,8 @@
 }
 
 footer {
+
+    background-image: url(./../images/footer-decoratioin/noise_body.png);
     background-color: var(--prime-text-color);
     padding-bottom: 27px;
 
@@ -22,14 +24,19 @@ footer {
         display: flex;
         align-items: flex-end;
 
-        background-position: bottom 0 left 22px, bottom 0 left 48px, bottom 0 left 85px,
-            bottom 0 right 85px;
-        background-repeat: no-repeat;
+        background-image: url(./../images/footer-decoratioin/ellipse5-tab.png),
+                url(./../images/footer-decoratioin/ellipse2-tab.png), url(./../images/footer-decoratioin/vertical-line-left-tab.png),
+                url(./../images/footer-decoratioin/vertical-line-right-tab.png);
+            background-position: bottom 0 left 22px, bottom 0 left 48px, bottom 0 left 85px,
+                bottom 0 right 85px;
+            background-repeat: no-repeat;
 
         @include mq(desktop) {
-            background-position: bottom 0 left 10px, bottom 0 left 50px, bottom 0 left 20px,
-                bottom -60px right -830px;
-            height: 120px;
+            background-image: url(./../images/footer-decoratioin/ellipse10.png), url(./../images/footer-decoratioin/ellipse11.png),
+                    url(./../images/footer-decoratioin/vertical-line-small.png), url(./../images/footer-decoratioin/vertical-line-small.png);
+                background-position: bottom 0 left 10px, bottom 0 left 50px, bottom 0 left 20px,
+                    bottom -60px right -830px;
+                    height: 120px;
         }
     }
 }
@@ -39,4 +46,10 @@ footer {
     border: 0px;
     color: var(--secondary-text-color);
     cursor: pointer;
+
+    &:focus,
+    &:hover{
+            color: var(--accent-color);
+        }
 }
+
