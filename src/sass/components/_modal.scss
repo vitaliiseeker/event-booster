@@ -193,13 +193,16 @@
 }
 
 .btn-buy-tickets {
+    display: block;
     width: 145px;
     height: 40px;
     background: var(--button-color);
     border-radius: 5px;
-    border-color: transparent;
     margin-top: 16px;
     margin-bottom: 16px;
+    padding: 9px 15px 10px;
+    text-align: center;
+
 
     font-weight: 500;
     line-height: calc(20 / 16);
@@ -216,6 +219,8 @@
 }
 
 .btn-more-info {
+    display: block;
+    text-align: center;
     width: 230px;
     height: 40px;
     border: 1px solid var(--button-color);
@@ -224,7 +229,7 @@
     font-weight: 500;
     line-height: calc(20 / 16);
     text-transform: uppercase;
-    background-color: transparent;
+    padding: 10px 15px;
 
     color: var(--button-color);
 
