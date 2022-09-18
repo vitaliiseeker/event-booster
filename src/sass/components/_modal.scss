@@ -30,7 +30,7 @@
   margin-left: auto;
   margin-right: auto;
 
-   
+
   @include mq(tablet) {
     padding: 100px 50px;
     position: absolute;
@@ -82,6 +82,7 @@
 
 .card-modal_box-img {
   margin-bottom: 20px;
+
   @include mq(tablet) {
     margin-bottom: 40px;
   }
@@ -93,12 +94,13 @@
   width: 102px;
   border-radius: 50%;
   margin: 0 auto;
-n
+
 
   @include mq(tablet) {
     height: 70px;
     width: 70px;
   }
+
   @include mq(desktop) {
     height: 132px;
     width: 132px;
@@ -107,6 +109,7 @@ n
 
 .card-modal_img-original {
   display: none;
+
   @include mq(tablet) {
     display: block;
     width: 249px;
@@ -128,6 +131,7 @@ n
     padding: 0 48px 0 85px;
     margin-bottom: 40px;
   }
+
   @include mq(desktop) {
     padding-left: 74px;
     padding-right: 60px;
@@ -138,6 +142,7 @@ n
   @include mq(tablet) {
     width: 286px;
   }
+
   @include mq(desktop) {
     width: 420px;
   }
@@ -145,6 +150,7 @@ n
 
 .card-modal_info {
   margin-bottom: 16px;
+
   @include mq(desktop) {
     margin-bottom: 20px;
   }
@@ -263,14 +269,11 @@ n
         width: 255px;
     }
 }
-    
-}
-
-
-.card-modal_close {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  background-color: transparent;
-  border: none;
+  .card-modal_close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background-color: transparent;
+    border: none;
+  }
 }
