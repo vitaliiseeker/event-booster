@@ -3,10 +3,18 @@
   flex-direction: column;
   gap: 24px;
 
+  padding-bottom: 56px;
+  background: transparent;
+
   @include mq(tablet) {
     flex-direction: row;
     justify-content: center;
     gap: 32px;
+    padding-bottom: 80px;
+  }
+
+  @include mq(desktop) {
+    padding-bottom: 120px;
   }
 }
 
@@ -15,8 +23,9 @@
   margin: 0 auto;
   width: 280px;
 
-  background: var(--search-form-bg-color);
-  backdrop-filter: blur(10px);
+  // background: var(--search-form-bg-color);
+  // backdrop-filter: blur(10px);
+  background: transparent;
   border-radius: 20px;
 
   @include mq(tablet) {
@@ -38,7 +47,7 @@
   font-size: 16px;
   line-height: 1.25;
 
-  color: var(--secondary-text-color);
+  color: var(--light-color);
   background: var(--search-form-bg-color);
   backdrop-filter: blur(10px);
 
@@ -67,10 +76,6 @@
 
 .field:hover .search-icon {
   fill: var(--accent-color);
-}
-
-.search-input:hover::-webkit-input-placeholder {
-  color: var(--accent-color);
 }
 
 .search-input:focus {
@@ -106,8 +111,8 @@
   border-radius: 20px;
 }
 
-.select-country:hover::input-placeholder {
-  color: var(--accent-color);
+.select-country option {
+  background: var(--search-form-bg-color);
 }
 
 .select-country:focus {
@@ -120,4 +125,28 @@
   right: 32px;
   padding: 0;
   outline: none;
+}
+.search-input::placeholder,
+.select-country::placeholder {
+  color: var(--secondary-text-color);
+}
+
+.search-input:hover::--webkit-input-placeholder,
+.select-country:hover::--webkit-input-placeholder {
+  color: var(--accent-color);
+}
+
+.value-country {
+  color: var(--secondary-text-color);
+  background-color: var(--accent-color);
+}
+
+select option {
+  color: var(--secondary-text-color);
+
+  background-color: #939393;
+  backdrop-filter: blur(10px);
+
+  border: none;
+  border-radius: 20px;
 }
