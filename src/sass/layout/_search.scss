@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  background: transparent; /* add*/
 
   @include mq(tablet) {
     flex-direction: row;
@@ -15,8 +16,9 @@
   margin: 0 auto;
   width: 280px;
 
-  background: var(--search-form-bg-color);
-  backdrop-filter: blur(10px);
+  background: transparent; /*add*/
+  // background: var(--search-form-bg-color);
+  // backdrop-filter: blur(10px);
   border-radius: 20px;
 
   @include mq(tablet) {
@@ -69,7 +71,10 @@
   fill: var(--accent-color);
 }
 
-.search-input:hover::-webkit-input-placeholder {
+.search-input::input-placeholder {
+  color: var(--secondary-text-color);
+}
+.search-input:hover::input-placeholder {
   color: var(--accent-color);
 }
 
