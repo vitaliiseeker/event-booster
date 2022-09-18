@@ -8,6 +8,7 @@ const baseRequest = axios.create({
 });
 
 export class EventsApi {
+<<<<<<< HEAD
   static page = 0;
   static totalPages = null;
   static size = 16;
@@ -71,6 +72,68 @@ export class EventsApi {
     // console.log(responseEvents);
     return responseEvents;
   }
+=======
+    static page = 0;
+    static totalPages = null;
+    static size = 16;
+    static baseEndPoint = "discovery/v2/";
+    static query = "";
+    static country = "";
+
+    /**
+     * 
+     * @param {number} page 0 (if the first query)
+     * @param {string} query "" (if you don't pass the argument)
+     * @param {string} country 
+     * @returns response (array)
+     */
+    static async fetchEvents(page = "", query = "", country = "") {
+        const endPoint = `${EventsApi.baseEndPoint}events.json`;
+        if (page) {
+            EventsApi.page = page;
+        }
+        if (query) {
+            EventsApi.query = query;
+        }
+        if (country) {
+            EventsApi.country = country;
+        }
+
+        const config = {
+            params: {
+                keyword: EventsApi.query,
+                countryCode: EventsApi.country,
+                size: EventsApi.size,
+                page: EventsApi.page,
+            }
+        }
+
+        return await EventsApi.checkResponse(endPoint, config);
+    }
+
+    static async fetchEventsById(id) {
+        const endPoints = `${EventsApi.baseEndPoint}events/${id}`;
+
+        const searchResult = await baseRequest.get(endPoints);
+        const response = await searchResult.data;
+        return response;
+    }
+
+    static async checkResponse(endPoint, config) {
+        const searchResult = await baseRequest.get(endPoint, config);
+        const response = await searchResult.data;
+
+        if (!response._embedded) {
+            throw new Error("Oops, not found!");
+        }
+
+        const responseEvents = response._embedded.events;
+        return responseEvents;        
+    }
+};
+
+
+>>>>>>> main
 
   static async getNextPage() {
     // console.log(EventsApi.links);
@@ -78,8 +141,12 @@ export class EventsApi {
     return nextLink;
   }
 
+<<<<<<< HEAD
   static async getPrevPage() {
     const prevLink = await baseRequest.get(`${EventsApi.links.prev.href}`);
     return prevLink;
   }
 }
+=======
+
+>>>>>>> main

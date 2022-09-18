@@ -2,21 +2,21 @@
     font-size: 14px;
     line-height: 17px;
     text-align: center;
-    color: #939393;
+    color: var(--secondary-text-color);
 
-    @media screen and (min-width: 768px) {
+    @include mq(tablet) {
         font-size: 16px;
         line-height: 20px;
         text-align: center;
-        color: #939393;
+        color: var(--secondary-text-color);
     }
 }
 
 footer {
-    background-color: #0e0e0e;
+    background-color: var(--prime-text-color);
     padding-bottom: 27px;
 
-    @media screen and (min-width: 768px) {
+    @include mq(tablet) {
         padding-bottom: 18px;
         height: 100px;
         display: flex;
@@ -26,7 +26,7 @@ footer {
             bottom 0 right 85px;
         background-repeat: no-repeat;
 
-        @media screen and (min-width: 1280px) {
+        @include mq(desktop) {
             background-position: bottom 0 left 10px, bottom 0 left 50px, bottom 0 left 20px,
                 bottom -60px right -830px;
             height: 120px;
@@ -37,6 +37,6 @@ footer {
 .btn-developers {
     background: transparent;
     border: 0px;
-    color: #939393;
+    color: var(--secondary-text-color);
     cursor: pointer;
 }
