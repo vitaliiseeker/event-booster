@@ -8,7 +8,8 @@ const baseRequest = axios.create({
 });
 
 export class EventsApi {
-  static page = 0;
+
+static page = 0;
   static totalPages = null;
   static size = 16;
   static baseEndPoint = 'discovery/v2/';
@@ -27,6 +28,7 @@ export class EventsApi {
     if (page) {
       EventsApi.page = page;
     }
+
     if (query) {
       EventsApi.query = query;
     }
