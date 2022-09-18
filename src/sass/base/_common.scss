@@ -12,7 +12,7 @@ body {
     url("../images/background/pic_320.png");
 
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top center;
   background-size: 100% 364px;
 
   @include mq(mobile) {
