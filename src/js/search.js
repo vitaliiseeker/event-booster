@@ -1,22 +1,18 @@
 import { EventsApi } from './modules/eventsApi';
 import countries from './data/countries.json';
-
+import { renderEvents } from './hero';
 const refSearchForm = document.querySelector('.js-search-form');
 const refSearchEvent = document.querySelector('.js-search-event');
 const refSelectCountry = document.querySelector('.js-select-country');
 const refValuecountry = document.querySelector('.js-value-country');
 
-const markupEvents = EventsApi.fetchEvents();
-//renderEvents(markupEvents);  //вызов функции рендера по умолчанию
-const markupSelect = countries
-  .map(el => `<option value="${el.code}">${el.name}</option>`)
-  .join('');
-
-refSelectCountry.insertAdjacentHTML('beforeend', markupSelect);
-
-refSearchForm.addEventListener('change', onSearch);
+export const markupEvents = EventsApi.fetchEvents();
+markupEvents.then(data => renderEvents(data));
+// console.log(markupEvents);
+// markupEvents.then(events => renderEvents(events)); //вызов функции рендера по умолчанию
+//console.log(test);
 refSearchForm.addEventListener('submit', onSearch);
-
+console.log(markupEvents);
 function onSearch(e) {
   e.preventDefault();
   const query = refSearchEvent.value;
@@ -27,8 +23,4 @@ function onSearch(e) {
     .catch(error => {
       console.log('Show ooops! - Поставить заглушку');
     });
-}
-
-function renderEvents(markupEvents) {
-  // рендер после выбора поьзователя
 }
