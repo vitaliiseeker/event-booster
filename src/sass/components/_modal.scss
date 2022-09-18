@@ -1,194 +1,204 @@
 .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
 
-    z-index: 10;
+  z-index: 10;
 
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 
-    opacity: 1;
-    overflow-y: scroll;
+  opacity: 1;
+  overflow-y: scroll;
 
-    transition: opacity,
-        visibility var(--animation);
+  transition: opacity, visibility var(--animation);
 
-    &.is-hidden {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 
 .no-scroll {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .modal {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
 
-    @include mq(tablet) {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        padding: 100px 50px;
-        transform: translate(-50%, -50%) scale(1);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 
-        transition: transform var(--animation);
+   
+  @include mq(tablet) {
+    padding: 100px 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-        .backdrop.is-hidden & {
-            transform: translate(-50%, -50%) scale(0.7);
-        }
+    transform: translate(-50%, -50%) scale(1);
+
+
+    transition: transform var(--animation);
+
+    .backdrop.is-hidden & {
+      transform: translate(-50%, -50%) scale(0.7);
     }
-
+  }
 }
 
 .event_modal {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    width: 280px;
-    min-height: 400px;
-    padding: 80px 10px 100px;   
-    transform: translate(-50%, 0);
-    background-color: var(--modal-primary-bg-color);
-    border-radius: 150px 0px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 280px;
+  min-height: 400px;
+  border-radius: 150px 0px;
+  padding: 80px 10px 100px;
+  transform: translate(-50%, 0);
+  background-color: var(--modal-primary-bg-color);
 
-    @include mq(tablet) {
-        width: 704px;
-        padding-top: 32px;
-        padding-bottom: 40px;
-        border-radius: 300px 0px;
-    }
+  @include mq(tablet) {
+    width: 704px;
+    border-radius: 300px 0px;
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
 
-    @include mq(desktop) {
-        width: 1034px;
-        padding-top: 54px;
-    }
+  @include mq(desktop) {
+    width: 1034px;
+    padding-top: 54px;
+  }
 }
 
 .card-modal {
-    text-align: center;
+  text-align: center;
 
-    @include mq(tablet) {
-        text-align: left;
-    }
+  @include mq(tablet) {
+    text-align: left;
+  }
 }
 
 .card-modal_box-img {
-    margin-bottom: 20px;
-    @include mq(tablet) {
-        margin-bottom: 40px;
-    }
+  margin-bottom: 20px;
+  @include mq(tablet) {
+    margin-bottom: 40px;
+  }
 }
 
 .card-modal_img-small {
-    height: 102px;
-    width: 102px;
-    margin: 0 auto;
-    border-radius: 50%;
 
-    @include mq(tablet) {
-        height: 70px;
-        width: 70px;
-    }
-    @include mq(desktop) {
-        height: 132px;
-        width: 132px;
-    }
+  height: 102px;
+  width: 102px;
+  border-radius: 50%;
+  margin: 0 auto;
+n
+
+  @include mq(tablet) {
+    height: 70px;
+    width: 70px;
+  }
+  @include mq(desktop) {
+    height: 132px;
+    width: 132px;
+  }
 }
 
 .card-modal_img-original {
-    display: none;
-    @include mq(tablet) {
-        display: block;
-        width: 249px;
-        height: 445px;
-    }
+  display: none;
+  @include mq(tablet) {
+    display: block;
+    width: 249px;
+    height: 445px;
+  }
 
-    @include mq(desktop) {
-        width: 427px;
-        height: 664px;
-    }
+  @include mq(desktop) {
+    width: 427px;
+    height: 664px;
+  }
 }
 
 .card-modal_box-info {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 
-    @include mq(tablet) {
-        display: flex;
-        gap: 32;
-        padding: 0 48px 0 85px;
-        margin-bottom: 40px;
-    }
-    @include mq(desktop) {
-        padding-left: 74px;
-        padding-right: 60px;
-    }
+  @include mq(tablet) {
+    display: flex;
+    gap: 32;
+    padding: 0 48px 0 85px;
+    margin-bottom: 40px;
+  }
+  @include mq(desktop) {
+    padding-left: 74px;
+    padding-right: 60px;
+  }
 }
 
 .card-modal_list {
-    @include mq(tablet) {
-        width: 286px;
-    }
-    @include mq(desktop) {
-        width: 420px;
-    }
+  @include mq(tablet) {
+    width: 286px;
+  }
+  @include mq(desktop) {
+    width: 420px;
+  }
 }
 
 .card-modal_info {
-    margin-bottom: 16px;
-    @include mq(desktop) {
-        margin-bottom: 20px;
-    }
-
+  margin-bottom: 16px;
+  @include mq(desktop) {
+    margin-bottom: 20px;
+  }
 }
 
 .card-modal_info:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .card-modal_title {
-    margin-bottom: 5px;
+
+  font-weight: 600;
+  font-size: 20px;
+  line-height: calc(24 / 20);
+  margin-bottom: 5px;
+
+
+  color: var(--accent-color);
+
+  @include mq(desktop) {
     font-weight: 600;
-    font-size: 20px;
-    line-height: calc(24 / 20);
-
-    color: var(--accent-color);
-
-    @include mq(desktop) {
-        font-weight: 600;
-        font-size: 24px;
-        line-height: calc(29 / 24);
-    }
+    font-size: 24px;
+    line-height: calc(29 / 24);
+  }
 }
 
 .card-modal_info p {
+
+  font-weight: 400;
+  line-height: 20px;
+  line-height: calc(20 / 16);
+
+
+  color: var(--prime-text-color);
+
+  @include mq(desktop) {
     font-weight: 400;
-    line-height: calc(20 / 16);
-
-    color: var(--prime-text-color);
-
-    @include mq(desktop) {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: calc(22 / 18);
-    }
+    font-size: 18px;
+    line-height: calc(22 / 18);
+  }
 }
 
 .event-icon-ticket {
-    margin-right: 9px;
-    vertical-align: middle;
+
+  vertical-align: middle;
+  margin-right: 9px;
+
 }
 
 .icon-ticket {
-    @include mq(desktop) {
-        width: 29px;
-        height: 19px;
-    }
+  @include mq(desktop) {
+    width: 29px;
+    height: 19px;
+  }
 }
 
 .btn-buy-tickets {
@@ -200,7 +210,6 @@
 
     font-weight: 500;
     line-height: calc(20 / 16);
-    text-align: center;
 
     background: var(--button-color);
     color: var(--light-color);
@@ -217,11 +226,25 @@
 }
 
 .btn-vip {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .btn-more-info {
     display: block;
+    width: 230px;
+    height: 40px;
+    border: 1px solid var(--button-color);
+    border-radius: 5px;
+
+    font-weight: 500;
+    line-height: calc(20 / 16);
+    text-transform: uppercase;
+    background-color: transparent;
+
+    color: var(--button-color);
+
+  @include mq(tablet) {
+    width: 255px;
     width: 230px;
     height: 40px;
     padding: 10px 5px;
@@ -240,11 +263,14 @@
         width: 255px;
     }
 }
+    
+}
+
 
 .card-modal_close {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    background-color: transparent;
-    border: none;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-color: transparent;
+  border: none;
 }
