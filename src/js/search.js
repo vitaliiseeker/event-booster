@@ -1,6 +1,6 @@
 import { EventsApi } from './modules/eventsApi';
 import countries from './data/countries.json';
-import { renderEvents } from './hero';
+import { renderEvents } from '../js/modules/markupGallery';
 const refSearchForm = document.querySelector('.js-search-form');
 const refSearchEvent = document.querySelector('.js-search-event');
 const refSelectCountry = document.querySelector('.js-select-country');
