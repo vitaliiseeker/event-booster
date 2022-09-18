@@ -1,6 +1,4 @@
 .header {
-  //   display: flex;
-  position: relative;
   padding: 40px 0 48px;
   background-image: url('../images/header/logo-d.png');
   background-size: 229px 193px;
@@ -39,7 +37,6 @@
 }
 
 .header__title {
-  position: relative;
   margin: 0 auto;
   max-width: 608px;
 
@@ -110,7 +107,7 @@
   }
 }
 
-.slideDown {
+.slide-down {
   animation-name: slideDown;
 
   animation-duration: 1s;
