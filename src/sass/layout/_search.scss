@@ -71,10 +71,11 @@
   fill: var(--accent-color);
 }
 
-.search-input::input-placeholder {
+.search-input::placeholder {
   color: var(--secondary-text-color);
 }
-.search-input:hover::input-placeholder {
+
+.search-input:hover::placeholder {
   color: var(--accent-color);
 }
 
