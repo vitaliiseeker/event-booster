@@ -1,7 +1,4 @@
 import './modules/eventsApi';
-// импорт на функцию создания разметки модалки
-// import { createMarkupEventModal } from './markupEventModal';
-
 
 export function openCloseModal() {
   refs.modal.classList.toggle('is-hidden');

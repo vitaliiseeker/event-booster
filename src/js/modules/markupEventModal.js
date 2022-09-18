@@ -3,36 +3,48 @@ export function createMarkupEventModal(arr) {
         name,
         info,
         images,
-        dates: { start, timezone }, 
+        dates: { start }, 
         priceRanges,
         url,
         _embedded: { venues },
     }) => {
-        const strInfo = info ? info : "text description";
+        const urlGoogle = `https://www.google.com/search?q=${name}`;
+        const strInfo = info ? info : "You can see more information about this event if you click on 'More about this event'";
 
         let strPriceList = ""; 
-        priceRanges.forEach(elem => {
-            let priceBox = "price-box";
-            let btnVip = "";
-            let nameType = "Standard";
-            
-            if (elem.type.toLowerCase() === "vip") {
-                nameType = "VIP";
-                priceBox += "-vip";
-                btnVip = "btn-vip";
-            }
-
-            strPriceList += `<p class="price-box${priceBox}">
+        if (!priceRanges) {
+            strPriceList += `<p class="price-box}">
                 <span class="event-icon-ticket">
                     <svg class="icon icon-ticket" width="24" height="16">
                         <use href="./images/symbol.svg#icon-ticket"></use>
                     </svg>
                 </span>
-                <span>${nameType} ${elem.min}-${elem.max} ${elem.currency}</span>
+                <span>- no info</span>
             </p>
-            <a class="btn-buy-tickets ${btnVip}" href="${url}">BUY TICKETS</a>`
-        });
+            <a class="btn-buy-tickets" href="${url}">BUY TICKETS</a>`
+        } else {
+            priceRanges.forEach(elem => {
+                let priceBox = "price-box";
+                let btnVip = "";
+                let nameType = "Standard";
+                
+                if (elem.type.toLowerCase() === "vip") {
+                    nameType = "VIP";
+                    priceBox += "-vip";
+                    btnVip = "btn-vip";
+                }
 
+                strPriceList += `<p class="${priceBox}">
+                    <span class="event-icon-ticket">
+                        <svg class="icon icon-ticket" width="24" height="16">
+                            <use href="./images/symbol.svg#icon-ticket"></use>
+                        </svg>
+                    </span>
+                    <span>${nameType} ${elem.min}-${elem.max} ${elem.currency}</span>
+                </p>
+                <a class="btn-buy-tickets ${btnVip}" href="${url}">BUY TICKETS</a>`
+            });
+        }
         return acc + `<div class="card-modal">
             <button class="card-modal_close" data-modal-close>
                 <svg class="card-modal_close-svg" width="17" height="17">
@@ -53,7 +65,7 @@ export function createMarkupEventModal(arr) {
                     <li class="card-modal_info">
                         <h3 class="card-modal_title">WHEN</h3>
                         <p>${start.localDate}</p>
-                        <p>${start.localTime.slice(0, -3)} (${timezone})</p>
+                        <p>${start.localTime.slice(0, -3)} (${venues[0].timezone})</p>
                     </li>
                     <li class="card-modal_info">
                         <h3 class="card-modal_title">WHERE</h3>
@@ -70,7 +82,7 @@ export function createMarkupEventModal(arr) {
                     </li>
                 </ul>
             </div>
-            <a class="btn-more-info" href="">More about this event</a>        
+            <a class="btn-more-info" href="${urlGoogle}">More about this event</a>        
         </div>`
     }, "");
 };

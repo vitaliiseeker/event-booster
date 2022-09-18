@@ -195,9 +195,7 @@
     display: block;
     width: 145px;
     height: 40px;
-    
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin: 16px 0;
     padding: 9px 15px 10px;
 
     font-weight: 500;
@@ -207,6 +205,11 @@
     background: var(--button-color);
     color: var(--light-color);
     border-radius: 5px;
+
+    @include mq(mobile-only) {
+        margin: 16px auto;
+    }
+
     @include mq(desktop) {
         margin-top: 20px;
         margin-bottom: 32px;
@@ -221,7 +224,8 @@
     display: block;
     width: 230px;
     height: 40px;
-    padding: 10px 15px;
+    padding: 10px 5px;
+    margin: 0 auto;
 
     font-weight: 500;
     line-height: calc(20 / 16);
@@ -234,7 +238,6 @@
     @include mq(tablet) {
         display: block;
         width: 255px;
-        margin: 0 auto;
     }
 }
 
