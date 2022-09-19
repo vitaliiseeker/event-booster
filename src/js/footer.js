@@ -9,17 +9,18 @@ const refs = {
 refs.openModalBtn.addEventListener('click', openModal);
 refs.closeModalBtn.addEventListener('click', closeModal);
 
-
 function openModal() {
   refs.modal.classList.remove('is-hidden');
   document.addEventListener('keydown', isKeyPressed);
   document.body.classList.toggle('no-scroll');
+  refs.modal.classList.toggle('animation');
 }
 
 function closeModal() {
   refs.modal.classList.add('is-hidden');
   document.removeEventListener('keydown', isKeyPressed);
   document.body.classList.toggle('no-scroll');
+  refs.modal.classList.toggle('animation');
 }
 
 function isKeyPressed(evt) {
