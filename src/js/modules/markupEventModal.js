@@ -1,3 +1,5 @@
+import imageSvg from '../../images/symbol.svg';
+
 export function createMarkupEventModal(arr) {
     return arr.reduce((acc, {
         name,
@@ -37,7 +39,7 @@ export function createMarkupEventModal(arr) {
                 strPriceList += `<p class="${priceBox}">
                     <span class="event-icon-ticket">
                         <svg class="icon icon-ticket" width="24" height="16">
-                            <use href="./images/symbol.svg#icon-ticket"></use>
+                            <use href="${imageSvg}#icon-ticket"></use>
                         </svg>
                     </span>
                     <span>${nameType} ${elem.min}-${elem.max} ${elem.currency}</span>
