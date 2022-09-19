@@ -12,15 +12,17 @@ refs.closeModalBtn.addEventListener('click', closeModal);
 function openModal() {
   refs.modal.classList.remove('is-hidden');
   document.addEventListener('keydown', isKeyPressed);
-  document.body.classList.toggle('no-scroll');
-  refs.modal.classList.toggle('animation');
+
+  document.body.classList.add('no-scroll');
+  refs.modal.classList.add('animation');
 }
 
 function closeModal() {
   refs.modal.classList.add('is-hidden');
   document.removeEventListener('keydown', isKeyPressed);
-  document.body.classList.toggle('no-scroll');
-  refs.modal.classList.toggle('animation');
+  
+  document.body.classList.remove('no-scroll');
+  refs.modal.classList.remove('animation');
 }
 
 function isKeyPressed(evt) {
