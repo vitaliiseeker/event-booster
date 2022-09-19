@@ -1,30 +1,31 @@
-// import { openCloseModal, isKeyPressed } from './modal.js';
+// import { openModal, closeModal, isKeyPressed } from './modal.js';
 
 const refs = {
-  openModalBtn: document.querySelector('[data-modal-foter-open]'),
-  closeModalBtn: document.querySelector('[data-modal-foter-close]'),
-  modal: document.querySelector('[data-modalFooter]'),
+  openModalBtn: document.querySelector('[data-modal-footer-open]'),
+  closeModalBtn: document.querySelector('[data-modal-footer-close]'),
+  modal: document.querySelector('[data-modal-footer]'),
 };
 
 refs.openModalBtn.addEventListener('click', openModal);
 refs.closeModalBtn.addEventListener('click', closeModal);
 
-function isKeyPressed(evt) {
-  if (evt.code === 'Escape') {
-    closeModal();
-  }
-}
 
 function openModal() {
   refs.modal.classList.remove('is-hidden');
   document.addEventListener('keydown', isKeyPressed);
-  document.body.classList.toggle('scrollOff');
+  document.body.classList.toggle('no-scroll');
 }
 
 function closeModal() {
   refs.modal.classList.add('is-hidden');
   document.removeEventListener('keydown', isKeyPressed);
-  document.body.classList.toggle('scrollOff');
+  document.body.classList.toggle('no-scroll');
+}
+
+function isKeyPressed(evt) {
+  if (evt.code === 'Escape') {
+    closeModal();
+  }
 }
 
 document.addEventListener('click', function (e) {

@@ -6,7 +6,7 @@ const refSearchEvent = document.querySelector('.js-search-event');
 const refSelectCountry = document.querySelector('.js-select-country');
 const refValuecountry = document.querySelector('.js-value-country');
 
-export const markupEvents = EventsApi.fetchEvents();
+const markupEvents = EventsApi.fetchEvents();
 markupEvents.then(data => renderEvents(data));
 //console.log(markupEvents);
 
@@ -16,11 +16,10 @@ const markupSelect = countries
 
 refSelectCountry.insertAdjacentHTML('beforeend', markupSelect);
 
-markupEvents.then(events => renderEvents(events)); //вызов функции рендера по умолчанию
-//console.log(test);
+markupEvents.then(events => renderEvents(events));
 refSearchForm.addEventListener('submit', onSearch);
 refSearchForm.addEventListener('change', onSearch);
-console.log(markupEvents);
+
 function onSearch(e) {
   e.preventDefault();
   const query = refSearchEvent.value;
