@@ -1,8 +1,7 @@
 .backdrop_footer {
   background: var(--backdrop-bg-color);
   backdrop-filter: blur(3px);
-  transition: opacity var(--animation),
-    visibility var(--animation);
+  transition: opacity var(--animation), visibility var(--animation);
   position: fixed;
   top: 0;
   left: 0;
@@ -12,10 +11,11 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+
 }
 
-.scrollOff{
-  overflow: hidden
+.no-scroll {
+  overflow: hidden;
 }
 
 .backdrop_footer.is-hidden {
@@ -36,9 +36,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
 
- @include mq(tablet) {
+  @include mq(tablet) {
     width: 595px;
     height: 670px;
     border-radius: 200px 0px;
@@ -143,6 +142,7 @@
   right: 25px;
   background: transparent;
   border: 0px;
+  cursor: pointer;
 
   @include mq(desktop) {
     top: 30px;
@@ -156,15 +156,13 @@
 
   fill: var(--modal-secondary-color);
 
-@include mq(desktop) {
+  @include mq(desktop) {
     width: 20px;
     height: 20px;
   }
 
-    &:focus,
-    &:hover {
-      fill: var(--button-color);
-    }
+  &:focus,
+  &:hover {
+    fill: var(--button-color);
+  }
 }
-
-

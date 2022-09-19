@@ -1,15 +1,35 @@
 import './modules/eventsApi';
-// импорт на функцию создания разметки модалки
-// import { createMarkupEventModal } from './markupEventModal';
+// import { refs } from './footer';
+const refsModal = document.querySelector('[data-modal');
 
+import createMarkupEventModal from './modules/markupEventModal';
 
-export function openCloseModal() {
-  refs.modal.classList.toggle('is-hidden');
+export function openModal() {
+  refsModal.classList.remove('is-hidden');
+  document.addEventListener('keydown', isKeyPressed);
+  document.body.classList.toggle('no-scroll');
 }
 
-export function isKeyPressed(evt) {
-  if (evt.code === 'Escape') {
-    refs.modal.classList.toggle('is-hidden');
-    // document.removeEventListener('keydown', isKeyPressed);
+export function closeModal() {
+  refsModal.classList.add('is-hidden');
+  document.removeEventListener('keydown', isKeyPressed);
+  document.body.classList.toggle('no-scroll');
+}
+
+function isKeyPressed(e) {
+  if (e.code === 'Escape') {
+    refsModal.classList.toggle('is-hidden');
+    document.removeEventListener('keydown', isKeyPressed);
   }
 }
+
+// document.addEventListener('click', function (e) {
+//   const target = e.target;
+//   const its_btnMenu = target == refs.openModalBtn;
+//   const menu_is_active = refs.modal.classList.contains('is-hidden');
+//   const its_menu = target == refs.modal;
+
+//   if (!its_btnMenu && !menu_is_active && its_menu) {
+//     closeModal();
+//   }
+// });
