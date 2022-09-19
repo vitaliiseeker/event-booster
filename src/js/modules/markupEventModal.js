@@ -1,11 +1,13 @@
 import imageSvg from '../../images/symbol.svg';
 
+const refsModal = document.querySelector(".js-event_modal");
+
 export function createMarkupEventModal(arr) {
-    return arr.reduce((acc, {
+    const renderModal = arr.reduce((acc, {
         name,
         info,
         images,
-        dates: { start }, 
+        dates: { start },
         priceRanges,
         url,
         _embedded: { venues },
@@ -13,7 +15,8 @@ export function createMarkupEventModal(arr) {
         const urlGoogle = `https://www.google.com/search?q=${name}`;
         const strInfo = info ? info : "You can see more information about this event if you click on 'More about this event'";
 
-        let strPriceList = ""; 
+        let strPriceList = "";
+
         if (!priceRanges) {
             strPriceList += `<p class="price-box}">
                 <span class="event-icon-ticket">
@@ -23,13 +26,13 @@ export function createMarkupEventModal(arr) {
                 </span>
                 <span>- no info</span>
             </p>
-            <a class="btn-buy-tickets" href="${url}">BUY TICKETS</a>`
+            <a class="btn-buy-tickets" href="${url} target="_blank"">BUY TICKETS</a>`
         } else {
             priceRanges.forEach(elem => {
                 let priceBox = "price-box";
                 let btnVip = "";
                 let nameType = "Standard";
-                
+
                 if (elem.type.toLowerCase() === "vip") {
                     nameType = "VIP";
                     priceBox += "-vip";
@@ -44,10 +47,10 @@ export function createMarkupEventModal(arr) {
                     </span>
                     <span>${nameType} ${elem.min}-${elem.max} ${elem.currency}</span>
                 </p>
-                <a class="btn-buy-tickets ${btnVip}" href="${url}">BUY TICKETS</a>`
+                <a class="btn-buy-tickets ${btnVip}" href="${url} target="_blank"">BUY TICKETS</a>`
             });
         }
-        return acc + `<div class="card-modal">
+        return acc + `<div class="card-modal is-hidden">
             <button class="card-modal_close" data-modal-close>
                 <svg class="card-modal_close-svg" width="17" height="17">
                     <use href="${imageSvg}#icon-close"></use>
@@ -84,8 +87,9 @@ export function createMarkupEventModal(arr) {
                     </li>
                 </ul>
             </div>
-            <a class="btn-more-info" href="${urlGoogle}">More about this event</a>        
+            <a class="btn-more-info" href="${urlGoogle}" target="_blank">More about this event</a> 
         </div>`
     }, "");
+    refsModal.innerHTML = renderModal;
 };
 
