@@ -1,5 +1,5 @@
 import { EventsApi } from './modules/eventsApi';
-import { renderGallery as renderEvents } from './modules/markupGallery';
+import { renderEvents } from './modules/markupGallery';
 // import { openModal, closeModal, isKeyPressed } from './modal';
 import { openModal } from './modal';
 import { createMarkupEventModal } from './modules/markupEventModal';
