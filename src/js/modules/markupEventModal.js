@@ -1,6 +1,25 @@
 import imageSvg from '../../images/symbol-defs.svg';
+import { addEventImages } from './addEventImages';
+import arrow from '../../images/sprite.svg'
 
 const refsModal = document.querySelector(".js-event_modal");
+function createBtnMore() {
+    const refsBtnMore = document.querySelector(".btn-arrow");
+    const refsTextDesc = document.querySelector(".card-modal_description");
+
+    if (refsBtnMore) {
+        refsBtnMore.addEventListener("click", (e) => {
+            console.log(refsTextDesc.style.maxHeight);
+            if (refsTextDesc.style.maxHeight === "85px") {
+                refsTextDesc.style.maxHeight = "initial";
+                refsBtnMore.style.transform = "rotate(180deg)";
+            } else {
+                refsTextDesc.style.maxHeight = "85px";
+                refsBtnMore.style.transform = "rotate(0deg)";
+            }       
+        })
+    }
+}
 
 export function createMarkupEventModal(arr) {
     const renderModal = arr.reduce((acc, {
@@ -12,9 +31,16 @@ export function createMarkupEventModal(arr) {
         url,
         _embedded: { venues },
     }) => {
+        addEventImages(images);
         const urlGoogle = `https://www.google.com/search?q=${name}`;
         const strInfo = info ? info : "You can see more information about this event if you click on 'More about this event'";
-
+        const btnMore = strInfo.length <= 100
+            ? ""
+            : `<button class="btn-arrow" type="button">
+                <svg class="icon icon-arrow" width="15" height="10">
+                    <use href="${arrow}#polygon"></use>
+                </svg>
+            </button>`;
         let strPriceList = "";
 
         if (!priceRanges) {
@@ -61,11 +87,12 @@ export function createMarkupEventModal(arr) {
                 <img class="card-modal_img-small" src="${images[3].url}" alt="">
             </div>
             <div class="card-modal_box-info">
-                <img class="card-modal_img-original" src="${images[0].url}" alt="">
+                <img class="card-modal_img-original" src="${images[6].url}" alt="">
                 <ul class="card-modal_list">
                     <li class="card-modal_info">
                         <h3 class="card-modal_title">INFO</h3>
-                        <p>${strInfo}</p>
+                        <p class="card-modal_description">${strInfo}</p>              
+                        ${btnMore}
                     </li>
                     <li class="card-modal_info">
                         <h3 class="card-modal_title">WHEN</h3>
@@ -74,8 +101,10 @@ export function createMarkupEventModal(arr) {
                     </li>
                     <li class="card-modal_info">
                         <h3 class="card-modal_title">WHERE</h3>
+                        <a class="maps" href="https://www.google.com/maps/@${venues[0].location.latitude},${venues[0].location.longitude},14z" target="_blank">
                         <p>${venues[0].country.name}</p>
                         <p>${venues[0].name}</p>
+                        </a> 
                     </li>
                     <li class="card-modal_info">
                         <h3 class="card-modal_title">WHO</h3>
@@ -91,5 +120,5 @@ export function createMarkupEventModal(arr) {
         </div>`
     }, "");
     refsModal.innerHTML = renderModal;
+    createBtnMore();
 };
-
