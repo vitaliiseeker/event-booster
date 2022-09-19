@@ -1,4 +1,4 @@
-import imageSvg from '../../images/symbol.svg';
+import imageSvg from '../../images/symbol-defs.svg';
 
 const refsModal = document.querySelector(".js-event_modal");
 
