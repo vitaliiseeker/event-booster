@@ -1,5 +1,5 @@
 import { EventsApi } from './eventsApi';
-const gallery = document.querySelector('.gallery');
+export const gallery = document.querySelector('.gallery');
 
 export function renderEvents(data) {
   const mark = data.reduce((acc, elem) => {

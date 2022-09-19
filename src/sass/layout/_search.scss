@@ -150,3 +150,50 @@ select option {
   border: none;
   border-radius: 20px;
 }
+
+// .title-error {
+//   // position: relative;
+//   margin: 0 auto;
+//   //max-width: 608px;
+
+//   font-weight: 900;
+//   font-size: 50px;
+//   line-height: calc(61 / 50);
+//   // text-align: center;
+
+//   color: var(--accent-color);
+//   @include mq(mobile-only) {
+//     max-width: 250px;
+
+//     font-size: 18px;
+//     line-height: calc(22 / 18);
+//   }
+//   @include mq(tablet-only) {
+//     max-width: 400px;
+//     font-size: 30px;
+//     line-height: calc(37 / 30);
+//   }
+// }
+
+.error-picture {
+  display: block;
+  background-image: url('../images/error-transp.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  // padding: 0;
+  //margin: 0 auto;
+  //margin-right: auto;
+  //position: relative;
+  height: 400px;
+  width: 400px;
+
+  @include mq(tablet) {
+    height: 600px;
+    width: 600px;
+  }
+
+  @include mq(desktop) {
+    height: 500px;
+    width: 500px;
+  }
+}
