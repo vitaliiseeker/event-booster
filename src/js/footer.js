@@ -13,13 +13,13 @@ refs.closeModalBtn.addEventListener('click', closeModal);
 function openModal() {
   refs.modal.classList.remove('is-hidden');
   document.addEventListener('keydown', isKeyPressed);
-  document.body.classList.toggle('no-scroll');
+  document.body.classList.add('no-scroll');
 }
 
 function closeModal() {
   refs.modal.classList.add('is-hidden');
   document.removeEventListener('keydown', isKeyPressed);
-  document.body.classList.toggle('no-scroll');
+  document.body.classList.remove('no-scroll');
 }
 
 function isKeyPressed(evt) {
