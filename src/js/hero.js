@@ -1,5 +1,5 @@
 import { EventsApi } from './modules/eventsApi';
-import { renderGallery } from './modules/markupGallery';
+import { renderGallery as renderEvents } from './modules/markupGallery';
 // import { openModal, closeModal, isKeyPressed } from './modal';
 import { openModal } from './modal';
 import { createMarkupEventModal } from './modules/markupEventModal';
@@ -11,7 +11,7 @@ const activeBtn = document.getElementsByClassName('active');
 
 paginationPage.addEventListener('click', e => {
   EventsApi.page = e.target.outerText - 1;
-  EventsApi.fetchEvents(EventsApi.page).then(r => renderGallery(r));
+  EventsApi.fetchEvents(EventsApi.page).then(r => renderEvents(r));
   selectPage(e);
   document
     .querySelector('body')
