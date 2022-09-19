@@ -18,7 +18,7 @@ export function createMarkupEventModal(arr) {
             strPriceList += `<p class="price-box}">
                 <span class="event-icon-ticket">
                     <svg class="icon icon-ticket" width="24" height="16">
-                        <use href="./images/symbol.svg#icon-ticket"></use>
+                        <use href="${imageSvg}#icon-ticket"></use>
                     </svg>
                 </span>
                 <span>- no info</span>
@@ -50,7 +50,7 @@ export function createMarkupEventModal(arr) {
         return acc + `<div class="card-modal">
             <button class="card-modal_close" data-modal-close>
                 <svg class="card-modal_close-svg" width="17" height="17">
-                    <use href="./images/symbol.svg#icon-close"></use>
+                    <use href="${imageSvg}#icon-close"></use>
                 </svg>
             </button>
 
