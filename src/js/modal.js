@@ -7,18 +7,18 @@ import createMarkupEventModal from './modules/markupEventModal';
 export function openModal() {
   refsModal.classList.remove('is-hidden');
   document.addEventListener('keydown', isKeyPressed);
-  document.body.classList.toggle('no-scroll');
+  document.body.classList.add('no-scroll');
 }
 
 export function closeModal() {
   refsModal.classList.add('is-hidden');
   document.removeEventListener('keydown', isKeyPressed);
-  document.body.classList.toggle('no-scroll');
+  document.body.classList.remove('no-scroll');
 }
 
 function isKeyPressed(e) {
   if (e.code === 'Escape') {
-    refsModal.classList.toggle('is-hidden');
+    refsModal.classList.add('is-hidden');
     document.removeEventListener('keydown', isKeyPressed);
   }
 }
