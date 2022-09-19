@@ -53,7 +53,7 @@
 
 .event_modal {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 50%;
   width: 280px;
   min-height: 400px;
@@ -164,12 +164,10 @@
 }
 
 .card-modal_title {
-
   font-weight: 600;
   font-size: 20px;
   line-height: calc(24 / 20);
   margin-bottom: 5px;
-
 
   color: var(--accent-color);
 
@@ -181,11 +179,9 @@
 }
 
 .card-modal_info p {
-
   font-weight: 400;
   line-height: 20px;
   line-height: calc(20 / 16);
-
 
   color: var(--prime-text-color);
 
@@ -197,10 +193,8 @@
 }
 
 .event-icon-ticket {
-
-  vertical-align: middle;
   margin-right: 9px;
-
+  vertical-align: middle;
 }
 
 .icon-ticket {
@@ -217,6 +211,7 @@
   margin: 16px 0;
   padding: 9px 15px 10px;
 
+  text-align: center;
   font-weight: 500;
   line-height: calc(20 / 16);
 
@@ -266,18 +261,13 @@
     color: var(--button-color);
     border: 1px solid var(--button-color);
     border-radius: 5px;
-
-    @include mq(tablet) {
-      display: block;
-      width: 255px;
-    }
   }
+}
 
-  .card-modal_close {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    background-color: transparent;
-    border: none;
-  }
+.card-modal_close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-color: transparent;
+  border: none;
 }
