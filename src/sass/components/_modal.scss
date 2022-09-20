@@ -27,6 +27,7 @@
 // }
 
 .no-scroll {
+
   @include mq(desktop) {
     overflow: hidden;
     margin-right: 20px;

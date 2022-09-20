@@ -18,34 +18,25 @@ export function renderEvents(data) {
                       </div>
                       <div class = "card__img-wrap">
 
-                      ${
-                        elem.images
-                          ? `<img class="card__img" src="${elem.images[1].url}" alt="" />`
-                          : `<svg class = "card-img__svg">
+                      ${elem.images
+        ? `<img class="card__img" src="${elem.images[1].url}" alt="" />`
+        : `<svg class = "card-img__svg">
                                 <use href='${imgBg}#icon-unload'></use>
                             </svg>`
-                      }  
-
-
-
-
+      }  
                       </div>
-
                       <p class="card__name">${elem.name}</p>
                       <p class="card__date">${elem.dates.start.localDate}</p>
                       <p class="card__place">
-                        ${
-                          place
-                            ? `<svg class = 'icon-place'>
+                        ${place
+        ? `<svg class = 'icon-place'>
                                 <use   width= 10px height = 10px
                                 href='${imgPlace}#icon-location'></use>
                                 </svg>` + place
-                            : ''
-                        }
+        : ''
+      }
                       </p>
-
-                      </li>
-          
+                      </li> 
           `
     );
   }, '');
@@ -54,7 +45,7 @@ export function renderEvents(data) {
   renderPagination();
 }
 
-function renderPagination() {
+export function renderPagination() {
   const currentPage = EventsApi.page + 1;
   const totalPages = EventsApi.totalPages;
   let pagination = '';
@@ -62,9 +53,8 @@ function renderPagination() {
   if (totalPages < 10) {
     for (let i = 1; i <= totalPages; i += 1) {
       pagination += `<li class="pagination__item">
-  <button class="pagination__btn ${
-    i === currentPage ? 'current' : ''
-  }" type="button">${i}</button></li>`;
+  <button class="pagination__btn ${i === currentPage ? 'current' : ''
+        }" type="button">${i}</button></li>`;
     }
   } else {
     if (currentPage < 6) {
@@ -89,9 +79,8 @@ function renderPagination() {
         for (let i = currentPage - 2; i <= currentPage + 2; i += 1) {
           pagination += `<li class="pagination__item">
                             <button class="pagination__btn
-                             ${
-                               i === currentPage ? 'current' : ''
-                             }" type="button">${i}
+                             ${i === currentPage ? 'current' : ''
+            }" type="button">${i}
                              </button>
                         </li>`;
         }
@@ -104,9 +93,8 @@ function renderPagination() {
         for (let i = currentPage - 2; i <= totalPages; i += 1) {
           pagination += `<li class="pagination__item">
                             <button class="pagination__btn
-                             ${
-                               i === currentPage ? 'current' : ''
-                             }" type="button">${i}
+                             ${i === currentPage ? 'current' : ''
+            }" type="button">${i}
                              </button>
                         </li>`;
         }

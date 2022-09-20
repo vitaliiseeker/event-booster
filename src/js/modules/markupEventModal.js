@@ -13,7 +13,6 @@ function createBtnMore() {
     const refsBtnMore = document.querySelector('.btn-arrow');
     const refsTextDesc = document.querySelector('.card-modal_description');
 
-
     if (refsBtnMore) {
         refsBtnMore.addEventListener('click', e => {
             const maxHeight = "90px";
@@ -153,10 +152,9 @@ export async function createMarkupEventModal(arr) {
 
     refsModal.innerHTML = await renderModal;
     createBtnMore();
+    openModal();
 
-    refCloseModal = await document.querySelector('[data-modal-close]');
-    refCloseModal.addEventListener('click', () => {
-        closeModal();
-    });
+    refCloseModal = document.querySelector('[data-modal-close]');
+    refCloseModal.addEventListener('click', () => closeModal());
 }
 
