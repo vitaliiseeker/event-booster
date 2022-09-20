@@ -1,6 +1,5 @@
 import { EventsApi } from './modules/eventsApi';
 import { renderEvents } from './modules/markupGallery';
-import { openModal, closeModal } from './modal';
 import { createMarkupEventModal } from './modules/markupEventModal';
 
 const paginationPage = document.querySelector('.pagination');
@@ -9,8 +8,7 @@ const gallery = document.querySelector('.gallery');
 const activeBtn = document.getElementsByClassName('current');
 
 paginationPage.addEventListener('click', e => {
-  EventsApi.page = e.target.outerText - 1;
-  EventsApi.fetchEvents(EventsApi.page).then(r => renderEvents(r));
+  EventsApi.fetchEvents(e.target.outerText - 1).then(r => renderEvents(r));
 
   document
     .querySelector('body')
@@ -18,12 +16,15 @@ paginationPage.addEventListener('click', e => {
 });
 
 gallery.addEventListener('click', e => {
-  const id = e.target.closest('li').dataset.id;
+  console.log(e);
+  // console.log(e.target.tagName.closest('li'));
 
-  // if (e.target.tagName !== "DIV") {
-  //     return;
+  // if (e.target.tagName.closest('li') !== "LI") {
+  //   return;
   // }
 
-  EventsApi.fetchEventsById(id).then(r => createMarkupEventModal(r)).then(openModal());
+  const id = e.target.closest('li').dataset.id;
+
+  EventsApi.fetchEventsById(id).then(r => createMarkupEventModal(r));
 });
 
