@@ -34,10 +34,6 @@ export class EventsApi {
       EventsApi.country = country;
     }
 
-    // EventsApi.page = page;
-    // EventsApi.query = query;
-    // EventsApi.country = country;
-
     const config = {
       params: {
         keyword: EventsApi.query,
@@ -72,7 +68,6 @@ export class EventsApi {
         : 50;
 
     const responseEvents = response._embedded.events;
-    //console.log(responseEvents);
     return responseEvents;
   }
 
