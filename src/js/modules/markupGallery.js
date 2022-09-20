@@ -4,7 +4,7 @@ import imgPlace from '../../images/symbol-defs.svg';
 import imgBg from '../../images/symbol-defs.svg';
 
 const refGallery = document.querySelector('.gallery');
-const refPagination = document.querySelector('.pagination');
+export const refPagination = document.querySelector('.pagination');
 
 export function renderEvents(data) {
   const mark = data.reduce((acc, elem) => {
