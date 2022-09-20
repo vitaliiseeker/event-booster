@@ -33,7 +33,9 @@ gallery.addEventListener('click', e => {
   //     return;
   // }
 
-  const data = EventsApi.fetchEventsById(id).then(r => createMarkupEventModal(r));
+  const data = EventsApi.fetchEventsById(id).then(r =>
+    createMarkupEventModal(r)
+  );
   openModal();
 });
 
@@ -55,6 +57,3 @@ gallery.addEventListener('click', e => {
 //     document.removeEventListener('keydown', isKeyPressed);
 //   }
 // }
-
-
-
