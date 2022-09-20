@@ -1,5 +1,5 @@
 import { EventsApi } from './eventsApi';
-const gallery = document.querySelector('.gallery');
+export const gallery = document.querySelector('.gallery');
 import iconPlace from '../../images/symbol-defs.svg#icon-place';
 export function renderEvents(data) {
   const mark = data.reduce((acc, elem) => {
