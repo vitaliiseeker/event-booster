@@ -23,7 +23,7 @@ main {
 .card {
   width: 130px;
   display: block;
-  border-radius: 35% 0;
+  border-radius: var(--main-radius);
 
   position: relative;
   text-align: center;
@@ -36,14 +36,14 @@ main {
   &:hover {
     transform: scale(1.02);
 
-    box-shadow: 12px 12px 15px -7px rgba(220, 86, 197, 0.72);
+    box-shadow: 12px 12px 15px -7px var(--box-shadow-color);
 
     @include mq(tablet) {
-      box-shadow: 12px 12px 20px -7px rgba(220, 86, 197, 0.72);
+      box-shadow: 12px 12px 20px -7px var(--box-shadow-color);
     }
 
     @include mq(desktop) {
-      box-shadow: 15px 15px 20px -7px rgba(220, 86, 197, 0.72);
+      box-shadow: 15px 15px 20px -7px var(--box-shadow-color);
     }
   }
 
@@ -59,7 +59,7 @@ main {
 }
 
 .card__img-wrap {
-  background-image: url(../images/card-svg/unload.svg);
+  // background-image: url(../images/symbol-defs.svg#icon-unload);
   background-repeat: no-repeat;
 }
 
@@ -67,7 +67,7 @@ main {
   width: 120px;
   height: 150px;
 
-  border-radius: 35% 0;
+  border-radius: var(--main-radius);
   margin-top: 10px;
 
   @include mq(tablet) {
@@ -85,7 +85,7 @@ main {
   width: 120px;
   height: 112px;
 
-  border-radius: 50% 0;
+  border-radius: var(--main-radius);
   outline: 1px solid var(--accent-color);
   opacity: 30%;
 
@@ -120,6 +120,7 @@ main {
 }
 
 .card__name {
+  display: block;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.2;
@@ -131,6 +132,7 @@ main {
 }
 
 .card__date {
+  display: block;
   font-size: 14px;
   color: var(--light-color);
 
@@ -140,6 +142,7 @@ main {
 }
 
 .card__place {
+  display: block;
   font-weight: 600;
   font-size: 12px;
   color: var(--light-color);
@@ -161,9 +164,12 @@ main {
 
 .pagination {
   display: flex;
-  list-style: none;
+  align-items: end;
   justify-content: center;
   gap: 5px;
+
+  list-style: none;
+
   padding: 60px 0;
 }
 
@@ -187,7 +193,7 @@ main {
 
 .current {
   color: var(--accent-color);
-  box-shadow: inset 0px 0px 5px 2px rgba(220, 86, 197, 0.72);
+  box-shadow: inset 0px 0px 5px 2px var(--box-shadow-color);
 }
 
 @keyframes card-anim {

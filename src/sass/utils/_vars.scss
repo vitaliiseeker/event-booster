@@ -1,15 +1,17 @@
 :root {
   --font-family: 'Montserrat';
 
+  --main-radius: 50px 0;
+
   --light-color: #ffffff;
   --dark-color: #000000;
-  --prime-text-color: #0E0E0E;
+  --prime-text-color: #0e0e0e;
   --secondary-text-color: #939393;
-  --accent-color: #DC56C5;
-  --button-color: #4C00FE;
-  --button-hover-color: #2E009A;
+  --accent-color: #dc56c5;
+  --button-color: #4c00fe;
+  --button-hover-color: #2e009a;
 
-  --primary-bg-color: #0E0E0E;
+  --primary-bg-color: #0e0e0e;
   --search-form-bg-color: rgba(255, 255, 255, 0.2);
 
   --overlay-color: rgba(11, 11, 11, 0.5);
@@ -18,9 +20,10 @@
 
   --backdrop-bg-color: rgba(32, 13, 29, 0.6);
 
-  --modal-primary-bg-color: #FFF2FD;
-  --modal-secondary-color: #C4C4C4;
-  ;
+  --modal-primary-bg-color: #fff2fd;
+  --modal-secondary-color: #c4c4c4;
 
   --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --box-shadow-color: rgba(220, 86, 197, 0.72);
 }
