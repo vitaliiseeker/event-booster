@@ -8,13 +8,13 @@ const baseRequest = axios.create({
 });
 
 export class EventsApi {
-    static page = 0;
-    static totalPages = null;
-    static totalElements = null;
-    static size = 16;
-    static baseEndPoint = "discovery/v2/";
-    static query = "";
-    static country = "";
+  static page = 0;
+  static totalPages = null;
+  static totalElements = null;
+  static size = 16;
+  static baseEndPoint = "discovery/v2/";
+  static query = "";
+  static country = "";
 
   /**
    * 
@@ -63,14 +63,17 @@ export class EventsApi {
     if (!response._embedded) {
       throw new Error('Oops, not found!');
     }
-    
-    if (response.page.totalElements <= 1000) {
-        EventsApi.totalElements = response.page.totalElements;
-    } else {
-        EventsApi.totalElements = 1000;
-    }
-    EventsApi.totalPages = Math.ceil(EventsApi.totalElements / EventsApi.size);
 
+    // if (response.page.totalElements <= 1000) {
+    //   EventsApi.totalElements = response.page.totalElements;
+    // } else {
+    //   EventsApi.totalElements = 1000;
+    // }
+
+    EventsApi.totalElements = response.page.totalElements <= 1000 ?
+      response.page.totalElements : 1000;
+
+    EventsApi.totalPages = Math.ceil(EventsApi.totalElements / EventsApi.size);
     const responseEvents = response._embedded.events;
     return responseEvents;
   }

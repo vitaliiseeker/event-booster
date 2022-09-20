@@ -1,25 +1,24 @@
 import './modules/eventsApi';
 // import { refs } from './footer';
-const refsModal = document.querySelector('[data-modal');
-
-import createMarkupEventModal from './modules/markupEventModal';
+const refModal = document.querySelector('[data-modal]');
+// const refCloseModal = document.querySelector('[data-modal-close]');
+// import createMarkupEventModal from './modules/markupEventModal';
 
 export function openModal() {
-  refsModal.classList.remove('is-hidden');
+  refModal.classList.remove('is-hidden');
   document.addEventListener('keydown', isKeyPressed);
   document.body.classList.add('no-scroll');
 }
 
 export function closeModal() {
-  refsModal.classList.add('is-hidden');
+  refModal.classList.add('is-hidden');
   document.removeEventListener('keydown', isKeyPressed);
   document.body.classList.remove('no-scroll');
 }
 
 function isKeyPressed(e) {
   if (e.code === 'Escape') {
-    refsModal.classList.add('is-hidden');
-    document.removeEventListener('keydown', isKeyPressed);
+    closeModal();
   }
 }
 

@@ -8,16 +8,20 @@ main {
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
   row-gap: 32px;
+
   @include mq(tablet) {
     grid-template-columns: repeat(4, 1fr);
-    padding: 20px;
     column-gap: 32px;
     row-gap: 32px;
   }
+
+  @include mq(desktop) {
+    row-gap: 40px;
+  }
 }
+
 .card {
   width: 130px;
-  // height: 280px;
   display: block;
   border-radius: 35% 0;
 
@@ -103,10 +107,12 @@ main {
   padding: 5px 10px;
 
   height: 140px;
+
   @include mq(tablet) {
     font-size: 16px;
     height: 130px;
   }
+
   @include mq(desktop) {
     padding-top: 10px;
     height: 100px;
@@ -118,21 +124,26 @@ main {
   font-size: 14px;
   line-height: 1.2;
   color: var(--accent-color);
+
   @include mq(tablet) {
     font-size: 16px;
   }
 }
+
 .card__date {
   font-size: 14px;
   color: var(--light-color);
+
   @include mq(tablet) {
     font-size: 16px;
   }
 }
+
 .card__place {
   font-weight: 600;
   font-size: 12px;
   color: var(--light-color);
+
   @include mq(tablet) {
     font-size: 14px;
   }
@@ -152,13 +163,18 @@ main {
   display: flex;
   list-style: none;
   justify-content: center;
-  padding: 40px 0;
+  gap: 5px;
+  padding: 60px 0;
 }
 
 .pagination__btn {
-  border-radius: 50% 0;
+  border-radius: 10px 0;
   width: 30px;
   height: 30px;
+
+  font-size: 14px;
+  line-height: calc(17 / 14);
+
   color: var(--light-color);
   background-color: transparent;
   border: none;
@@ -169,8 +185,7 @@ main {
   color: var(--accent-color);
 }
 
-.active {
-  outline: 1px solid var(--accent-color);
+.current {
   color: var(--accent-color);
   box-shadow: inset 0px 0px 5px 2px rgba(220, 86, 197, 0.72);
 }
@@ -183,26 +198,33 @@ main {
 
     background-color: rgba(238, 98, 98, 0.5);
   }
+
   10% {
     background-color: rgba(238, 98, 98, 0.45);
   }
+
   20% {
     opacity: 0.3;
     background-color: rgba(238, 98, 98, 0.1);
   }
+
   30% {
     background-color: rgba(248, 7, 196, 0.45);
   }
+
   50% {
     opacity: 0.7;
     background-color: rgba(248, 7, 196, 0.2);
   }
+
   60% {
     background-color: rgba(248, 7, 196, 0.45);
   }
+
   85% {
     background-color: rgba(248, 7, 196, 0.1);
   }
+
   100% {
     opacity: 1;
 

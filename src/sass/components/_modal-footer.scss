@@ -140,6 +140,7 @@
   height: 20px;
   top: 25px;
   right: 25px;
+  padding: 15px;
   background: transparent;
   border: 0px;
   cursor: pointer;
@@ -167,7 +168,7 @@
   }
 }
 
-.animation{
+.animation {
   animation-duration: 0.55s;
   animation-fill-mode: both;
   animation-name: fadeInUpBig;
