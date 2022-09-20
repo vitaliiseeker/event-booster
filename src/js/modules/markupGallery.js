@@ -115,14 +115,3 @@ function renderPagination() {
   }
   refPagination.innerHTML = pagination;
 }
-
-/* 
-
-                      <img class="card__img" src="${
-                        elem.images
-                          ? '../images/card-svg/unload.svg'
-                          : elem.images[1].url
-                      }" alt="" />
-*/
-
-//                      <div class = "card-desc__wrapper">
