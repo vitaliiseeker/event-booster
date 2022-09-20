@@ -30,8 +30,6 @@ export function createMarkupEventModal(arr) {
         url,
         _embedded: { venues },
     }) => {
-        // addEventImages(images);
-        // const imgSmall = images.find(item => item.url.includes("ARTIST_PAGE_3_2"));
         const urlGoogle = `https://www.google.com/search?q=${name}`;
         const strInfo = info ? info : "You can see more information about this event if you click on 'More about this event'";
         const btnMore = strInfo.length <= 100
