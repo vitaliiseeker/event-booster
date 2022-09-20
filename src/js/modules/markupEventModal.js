@@ -30,8 +30,6 @@ export function createMarkupEventModal(arr) {
         url,
         _embedded: { venues },
     }) => {
-        // addEventImages(images);
-        // const imgSmall = images.find(item => item.url.includes("ARTIST_PAGE_3_2"));
         const urlGoogle = `https://www.google.com/search?q=${name}`;
         const strInfo = info ? info : "You can see more information about this event if you click on 'More about this event'";
         const btnMore = strInfo.length <= 100
@@ -52,7 +50,7 @@ export function createMarkupEventModal(arr) {
                 </span>
                 <span>- no info</span>
             </p>
-            <a class="btn-buy-tickets" href="${url} target="_blank"">BUY TICKETS</a>`
+            <a class="btn-buy-tickets" href="${venues[0].url}" target="_blank">BUY TICKETS</a>`
         } else {
             priceRanges.forEach(elem => {
                 let priceBox = "price-box";
@@ -73,7 +71,7 @@ export function createMarkupEventModal(arr) {
                     </span>
                     <span>${nameType} ${elem.min}-${elem.max} ${elem.currency}</span>
                 </p>
-                <a class="btn-buy-tickets ${btnVip}" href="${url} target="_blank"">BUY TICKETS</a>`
+                <a class="btn-buy-tickets ${btnVip}" href="${venues[0].url}" target="_blank">BUY TICKETS</a>`
             });
         }
         return acc + `<div class="card-modal is-hidden">
