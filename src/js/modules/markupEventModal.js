@@ -147,10 +147,9 @@ export async function createMarkupEventModal(arr) {
 
     refsModal.innerHTML = await renderModal;
     createBtnMore();
+    openModal();
 
-    refCloseModal = await document.querySelector('[data-modal-close]');
-    refCloseModal.addEventListener('click', () => {
-        closeModal();
-    });
+    refCloseModal = document.querySelector('[data-modal-close]');
+    refCloseModal.addEventListener('click', () => closeModal());
 }
 

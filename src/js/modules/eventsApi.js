@@ -11,15 +11,15 @@ export class EventsApi {
   static page = 0;
   static totalPages = null;
   static size = 16;
-  static baseEndPoint = "discovery/v2/";
-  static query = "";
-  static country = "";
+  static baseEndPoint = 'discovery/v2/';
+  static query = '';
+  static country = '';
 
   /**
-   * 
+   *
    * @param {number} page 0 (if the first query)
    * @param {string} query "" (if you don't pass the argument)
-   * @param {string} country 
+   * @param {string} country
    * @returns response (array)
    */
   static async fetchEvents(page = 0, query = '', country = '') {
@@ -33,6 +33,10 @@ export class EventsApi {
     if (country) {
       EventsApi.country = country;
     }
+
+    // EventsApi.page = page;
+    // EventsApi.query = query;
+    // EventsApi.country = country;
 
     const config = {
       params: {
@@ -62,17 +66,19 @@ export class EventsApi {
       throw new Error('Oops, not found!');
     }
 
-    EventsApi.totalPages = response.page.totalElements < 1000
-      ? Math.ceil(response.page.totalElements / EventsApi.size)
-      : 50;
+    EventsApi.totalPages =
+      response.page.totalElements < 1000
+        ? Math.ceil(response.page.totalElements / EventsApi.size)
+        : 50;
 
     const responseEvents = response._embedded.events;
+    //console.log(responseEvents);
     return responseEvents;
   }
 
   static clearParams() {
     EventsApi.page = 0;
-    EventsApi.query = "";
-    EventsApi.country = "";
+    EventsApi.query = '';
+    EventsApi.country = '';
   }
 }

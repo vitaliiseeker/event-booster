@@ -81,7 +81,7 @@
 .search-input:hover,
 .select-country:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 0 0.1rem var(--accent-color);
+  border: 2px solid var(--accent-color);
   transition: var(----animation);
 }
 
@@ -130,6 +130,10 @@
   transform: rotate(180deg);
 }
 
+.rotate {
+  transform: rotate(180deg);
+}
+
 .search-lbl {
   position: absolute;
   top: 10px;
@@ -142,8 +146,7 @@
 .select-country::placeholder {
   color: var(--secondary-text-color);
 }
-
-//--webkit-input-
+///-----------------
 .search-input:hover::placeholder,
 .select-country:hover::placeholder {
   color: var(--accent-color);
