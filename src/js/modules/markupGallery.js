@@ -1,7 +1,7 @@
 import { EventsApi } from './eventsApi';
 export const gallery = document.querySelector('.gallery');
-import imgPlace from '../../images/symbol-defs.svg';
-import imgBg from '../../images/symbol-defs.svg';
+import imgPlace from '../../images/sprite.svg';
+import imgBg from '../../images/sprite.svg';
 
 const refGallery = document.querySelector('.gallery');
 export const refPagination = document.querySelector('.pagination');
