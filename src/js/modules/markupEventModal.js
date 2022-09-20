@@ -16,45 +16,45 @@ function createBtnMore() {
 
     if (refsBtnMore) {
         refsBtnMore.addEventListener('click', e => {
+            const maxHeight = "90px";
             if (
-                refsTextDesc.style.maxHeight === '85px' ||
+                refsTextDesc.style.maxHeight === maxHeight ||
                 refsTextDesc.style.maxHeight === ''
             ) {
                 refsTextDesc.style.maxHeight = 'initial';
                 refsBtnMore.style.transform = 'rotate(180deg)';
             } else {
-                refsTextDesc.style.maxHeight = '85px';
+                refsTextDesc.style.maxHeight = maxHeight;
                 refsBtnMore.style.transform = 'rotate(0deg)';
             }
         });
     }
 }
 
-
 export async function createMarkupEventModal(arr) {
     const renderModal = await arr.reduce((acc, {
         name,
         info,
         images,
+        url,
         dates: { start },
         priceRanges,
-        url,
         _embedded: { venues },
     }
     ) => {
-        addEventImages(images);
         const urlGoogle = `https://www.google.com/search?q=${name}`;
         const strInfo = info
             ? info
             : "You can see more information about this event if you click on 'More about this event'";
         const btnMore =
-            strInfo.length <= 100
+            strInfo.length <= 170
                 ? ''
                 : `<button class="btn-arrow" type="button">
                 <svg class="icon icon-arrow" width="15" height="10">
                     <use href="${arrow}#polygon"></use>
                 </svg>
             </button>`;
+        
         let strPriceList = '';
 
         if (!priceRanges) {
@@ -66,7 +66,7 @@ export async function createMarkupEventModal(arr) {
                 </span>
                 <span>- no info</span>
             </p>
-            <a class="btn-buy-tickets" href="${venues[0].url}" target="_blank">BUY TICKETS</a>`;
+            <a class="btn-buy-tickets" href="${url}" target="_blank">BUY TICKETS</a>`;
         } else {
             priceRanges.forEach(elem => {
                 let priceBox = 'price-box';
@@ -87,17 +87,17 @@ export async function createMarkupEventModal(arr) {
                     </span>
                     <span>${nameType} ${elem.min}-${elem.max} ${elem.currency}</span>
                 </p>
-                <a class="btn-buy-tickets ${btnVip}" href="${venues[0].url}" target="_blank">BUY TICKETS</a>`;
+                <a class="btn-buy-tickets ${btnVip}" href="${url}" target="_blank">BUY TICKETS</a>`;
             });
         }
+
         return acc +
             `<div class="card-modal is-hidden">
             <button class="card-modal_close" data-modal-close>
                 <svg class="card-modal_close-svg" width="17" height="17">
-                    <use href="${imageSvg}#icon-close"></use>
+                    <use href="${imageSvg}#icon-close-modal"></use>
                 </svg>
             </button>
-
             <div class="card-modal_box-img">
                 <img class="card-modal_img-small" src="${addEventImages(images).url
             }" alt="">
@@ -114,15 +114,18 @@ export async function createMarkupEventModal(arr) {
                     <li class="card-modal_info">
                         <h3 class="card-modal_title">WHEN</h3>
                         <p>${start.localDate}</p>
-                        <p>${start.localTime.slice(0, -3)} (${venues[0].timezone
-            })</p>
+                        <p>${start.localTime
+                        ? start.localTime.slice(0, -3)
+                        : ""} (${venues[0].timezone})</p>
                     </li>
                     <li class="card-modal_info">
                         <h3 class="card-modal_title">WHERE</h3>
-                        <a class="maps" href="https://www.google.com/maps/@${venues[0].location.latitude
-            },${venues[0].location.longitude},14z" target="_blank">
+                        <a class="maps" href="https://www.google.com/maps/@${venues[0].location.latitude},
+                        ${venues[0].location.longitude},14z" target="_blank">
                         <p>${venues[0].country.name}</p>
-                        <p>${venues[0].name}</p>
+                        <p>${venues[0].name
+                        ? venues[0].name
+                        : ""}</p>
                         </a> 
                     </li>
                     <li class="card-modal_info">
