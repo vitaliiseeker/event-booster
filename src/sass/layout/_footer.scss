@@ -16,11 +16,10 @@ footer {
 
     background-image: url(./../images/footer-decoratioin/noise_body.png);
     background-color: var(--prime-text-color);
-    padding-bottom: 27px;
+    padding-bottom: 24px;
 
     @include mq(tablet) {
-        padding-bottom: 18px;
-        height: 100px;
+        padding-bottom: 40px;
         display: flex;
         align-items: flex-end;
 
@@ -35,8 +34,7 @@ footer {
             background-image: url(./../images/footer-decoratioin/ellipse10.png), url(./../images/footer-decoratioin/ellipse11.png),
                     url(./../images/footer-decoratioin/vertical-line-small.png), url(./../images/footer-decoratioin/vertical-line-small.png);
                 background-position: bottom 0 left 10px, bottom 0 left 50px, bottom 0 left 20px,
-                    bottom -60px right -830px;
-                    height: 120px;
+                    bottom -60px right -830px;       
         }
     }
 }
