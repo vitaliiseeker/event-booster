@@ -9,8 +9,7 @@ function createBtnMore() {
 
     if (refsBtnMore) {
         refsBtnMore.addEventListener("click", (e) => {
-            console.log(refsTextDesc.style.maxHeight);
-            if (refsTextDesc.style.maxHeight === "85px") {
+            if (refsTextDesc.style.maxHeight === "85px" || refsTextDesc.style.maxHeight === "") {
                 refsTextDesc.style.maxHeight = "initial";
                 refsBtnMore.style.transform = "rotate(180deg)";
             } else {
@@ -31,7 +30,8 @@ export function createMarkupEventModal(arr) {
         url,
         _embedded: { venues },
     }) => {
-        addEventImages(images);
+        // addEventImages(images);
+        // const imgSmall = images.find(item => item.url.includes("ARTIST_PAGE_3_2"));
         const urlGoogle = `https://www.google.com/search?q=${name}`;
         const strInfo = info ? info : "You can see more information about this event if you click on 'More about this event'";
         const btnMore = strInfo.length <= 100
@@ -84,10 +84,10 @@ export function createMarkupEventModal(arr) {
             </button>
 
             <div class="card-modal_box-img">
-                <img class="card-modal_img-small" src="${images[3].url}" alt="">
+                <img class="card-modal_img-small" src="${addEventImages(images).url}" alt="">
             </div>
             <div class="card-modal_box-info">
-                <img class="card-modal_img-original" src="${images[6].url}" alt="">
+                <img class="card-modal_img-original" src="${addEventImages(images).url}" alt="">
                 <ul class="card-modal_list">
                     <li class="card-modal_info">
                         <h3 class="card-modal_title">INFO</h3>

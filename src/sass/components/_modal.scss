@@ -116,6 +116,7 @@
   @include mq(tablet) {
     display: block;
     width: 249px;
+    max-height: 585px;
     border-radius: 100px 0px;
   }
 
@@ -175,6 +176,7 @@
 .card-modal_info p {
   font-weight: 400;
   line-height: calc(20 / 16);
+  padding: 0 10px;
 
   color: var(--prime-text-color);
 
@@ -239,6 +241,7 @@
   width: 230px;
   height: 40px;
   padding: 10px 5px;
+  margin: 0 auto;
 
   font-weight: 500;
   line-height: calc(20 / 16);
@@ -256,18 +259,7 @@
 
   @include mq(tablet) {
     width: 255px;
-    width: 230px;
-    height: 40px;
     padding: 10px 5px;
-    margin: 0 auto;
-
-    font-weight: 500;
-    line-height: calc(20 / 16);
-    text-align: center;
-    text-transform: uppercase;
-    color: var(--button-color);
-    border: 1px solid var(--button-color);
-    border-radius: 5px;
   }
 }
 
