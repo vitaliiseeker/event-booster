@@ -110,12 +110,13 @@
   @include mq(tablet) {
     display: block;
     width: 249px;
-    max-height: 585px;
+    max-height: 440px;
     border-radius: 100px 0px;
   }
 
   @include mq(desktop) {
     width: 427px;
+    max-height: 585px;
   }
 }
 
@@ -169,9 +170,12 @@
 .card-modal_info p {
   font-weight: 400;
   line-height: calc(20 / 16);
-  padding: 0 10px;
 
   color: var(--prime-text-color);
+
+  @include mq(mobile-only) {
+    padding: 0 10px;
+  }
 
   @include mq(desktop) {
     font-size: 18px;
@@ -180,8 +184,12 @@
 }
 
 .card-modal_description {
-  max-height: 85px;
+  max-height: 90px;
   overflow: hidden;
+}
+
+.card-modal_location {
+  display: inline-block;
 }
 
 .event-icon-ticket {
@@ -268,7 +276,7 @@
   border: none;
   cursor: pointer;
 
-  &:hover .icon-arrow {
+  &:hover .card-modal_close-svg {
     fill: var(--accent-color);
   }
 }
