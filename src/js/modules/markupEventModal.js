@@ -50,7 +50,7 @@ export function createMarkupEventModal(arr) {
                 </span>
                 <span>- no info</span>
             </p>
-            <a class="btn-buy-tickets" href="${url} target="_blank"">BUY TICKETS</a>`
+            <a class="btn-buy-tickets" href="${venues[0].url}" target="_blank">BUY TICKETS</a>`
         } else {
             priceRanges.forEach(elem => {
                 let priceBox = "price-box";
@@ -71,7 +71,7 @@ export function createMarkupEventModal(arr) {
                     </span>
                     <span>${nameType} ${elem.min}-${elem.max} ${elem.currency}</span>
                 </p>
-                <a class="btn-buy-tickets ${btnVip}" href="${url} target="_blank"">BUY TICKETS</a>`
+                <a class="btn-buy-tickets ${btnVip}" href="${venues[0].url}" target="_blank">BUY TICKETS</a>`
             });
         }
         return acc + `<div class="card-modal is-hidden">
