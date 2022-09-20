@@ -3,7 +3,7 @@ export function addEventImages(arr) {
     const maxSize = 1280;
 
     if (document.body.offsetWidth <= minSize) {
-        return arr.find((item) => item.url.includes("ARTIST_PAGE_3_2"))
+        return arr.find(item => item.url.includes("ARTIST_PAGE_3_2"))
     }
 
     if (document.body.offsetWidth > minSize && document.body.offsetWidth < maxSize) {

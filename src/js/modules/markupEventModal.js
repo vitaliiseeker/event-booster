@@ -54,7 +54,7 @@ export async function createMarkupEventModal(arr) {
                     <use href="${arrow}#polygon"></use>
                 </svg>
             </button>`;
-        
+        // const test = `${imageSvg}#icon-unload`;
         let strPriceList = '';
 
         if (!priceRanges) {
@@ -90,7 +90,7 @@ export async function createMarkupEventModal(arr) {
                 <a class="btn-buy-tickets ${btnVip}" href="${url}" target="_blank">BUY TICKETS</a>`;
             });
         }
-
+        images = null;
         return acc +
             `<div class="card-modal is-hidden">
             <button class="card-modal_close" data-modal-close>
@@ -99,12 +99,19 @@ export async function createMarkupEventModal(arr) {
                 </svg>
             </button>
             <div class="card-modal_box-img">
-                <img class="card-modal_img-small" src="${addEventImages(images).url
-            }" alt="">
+                ${images && !images.length
+            ? `<img class="card-modal_img-small" src="${addEventImages(images).url
+            }" alt="">`
+            : `<svg class="card-modal_test-svg" width="40" height="40">
+                    <use href="${imageSvg}#icon-unload"></use>
+                </svg>`}
             </div>
             <div class="card-modal_box-info">
-                <img class="card-modal_img-original" src="${addEventImages(images).url
-            }" alt="">
+                ${images && !images.length
+            ? `<img class="card-modal_img-original" src="${addEventImages(images).url}" alt="">`
+            : `<svg class="card-modal_style-svg" width="420" height="600">
+                    <use href="${imageSvg}#icon-unload"></use>
+                </svg>`}         
                 <ul class="card-modal_list">
                     <li class="card-modal_info">
                         <h3 class="card-modal_title">INFO</h3>
@@ -120,9 +127,11 @@ export async function createMarkupEventModal(arr) {
                     </li>
                     <li class="card-modal_info">
                         <h3 class="card-modal_title">WHERE</h3>
-                        <a class="maps" href="https://www.google.com/maps/@${venues[0].location.latitude},
-                        ${venues[0].location.longitude},14z" target="_blank">
-                        <p>${venues[0].country.name}</p>
+                        <a class="card-modal_maps" href="https://www.google.com/maps/@${venues[0].location.latitude},${venues[0].location.longitude},14z" target="_blank">
+                        <svg class="card-modal_location-svg" width="17" height="17">
+                            <use href="${imageSvg}#icon-location"></use>
+                        </svg>
+                        <p class="card-modal_location">${venues[0].country.name}</p>
                         <p>${venues[0].name
                         ? venues[0].name
                         : ""}</p>

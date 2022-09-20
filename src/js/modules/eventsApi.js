@@ -22,7 +22,7 @@ export class EventsApi {
    * @param {string} country 
    * @returns response (array)
    */
-  static async fetchEvents(page = '', query = '', country = '') {
+  static async fetchEvents(page = 0, query = '', country = '') {
     const endPoint = `${EventsApi.baseEndPoint}events.json`;
     if (page) {
       EventsApi.page = page;
@@ -68,5 +68,11 @@ export class EventsApi {
 
     const responseEvents = response._embedded.events;
     return responseEvents;
+  }
+
+  static clearParams() {
+    EventsApi.page = 0;
+    EventsApi.query = "";
+    EventsApi.country = "";
   }
 }
