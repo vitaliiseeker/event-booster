@@ -1,19 +1,16 @@
 import { EventsApi } from './modules/eventsApi';
 import countries from './data/countries.json';
-import { renderEvents } from '../js/modules/markupGallery';
+import { renderEvents, refPagination } from '../js/modules/markupGallery';
 import { gallery } from '../js/modules/markupGallery';
-import { selectPage } from '../js/hero';
 import way from '../images/error.png';
 
 const refSearchForm = document.querySelector('.js-search-form');
 const refSearchEvent = document.querySelector('.js-search-event');
 const refSelectCountry = document.querySelector('.js-select-country');
-
 export const markupEvents = EventsApi.fetchEvents();
+
 markupEvents.then(data => renderEvents(data));
 
-
-// const markupEvents = EventsApi.fetchEvents();
 const markupSelect = countries
   .map(el => `<option value="${el.code}">${el.name}</option>`)
   .join('');
@@ -32,16 +29,18 @@ function onSearch(e) {
   const country = refSelectCountry.value;
 
   EventsApi.fetchEvents(0, query, country)
-    .then(events => renderEvents(events))
+    .then(events => {
+      renderEvents(events);
+      EventsApi.page = 0;
+    })
     .catch(() => {
       handleError();
     });
-  gallery.classList.add('gallery');
+  gallery.style.display = 'grid';
 }
 
 function handleError() {
-  renderEvents([]);
-  gallery.innerHTML = '';
-  gallery.classList.remove('gallery');
+  refPagination.innerHTML = '';
+  gallery.style.display = 'block';
   gallery.innerHTML = `<div><img src="${way}" class="error-picture" alt="Sorry, there are no events matching your search query. Please try again" width="350"></div>`;
 }
