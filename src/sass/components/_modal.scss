@@ -8,8 +8,11 @@
   width: 100vw;
   height: 100vh;
 
+
+  background: var(--backdrop-bg-color);
   opacity: 1;
   overflow-y: scroll;
+  backdrop-filter: blur(3px);
 
   transition: opacity, visibility var(--animation);
 
@@ -50,25 +53,25 @@
 
 .event_modal {
   position: absolute;
-  top: 10%;
+  top: 1%;
   left: 50%;
   width: 280px;
   min-height: 400px;
   border-radius: 150px 0px;
-  padding: 80px 10px 100px;
+  padding: 80px 0 100px;
   transform: translate(-50%, 0);
   background-color: var(--modal-primary-bg-color);
 
   @include mq(tablet) {
     width: 704px;
-    border-radius: 300px 0px;
+    border-radius: 230px 0px;
     padding-top: 32px;
     padding-bottom: 40px;
   }
 
   @include mq(desktop) {
-    width: 1034px;
-    padding-top: 54px;
+    width: 1000px;
+    padding-top: 30px;
   }
 }
 
@@ -113,12 +116,12 @@
   @include mq(tablet) {
     display: block;
     width: 249px;
-    height: 445px;
+    max-height: 585px;
+    border-radius: 100px 0px;
   }
 
   @include mq(desktop) {
     width: 427px;
-    height: 664px;
   }
 }
 
@@ -127,14 +130,8 @@
 
   @include mq(tablet) {
     display: flex;
-    gap: 32;
-    padding: 0 48px 0 85px;
+    justify-content: space-evenly;
     margin-bottom: 40px;
-  }
-
-  @include mq(desktop) {
-    padding-left: 74px;
-    padding-right: 60px;
   }
 }
 
@@ -144,7 +141,7 @@
   }
 
   @include mq(desktop) {
-    width: 420px;
+    width: 427px;
   }
 }
 
@@ -161,12 +158,10 @@
 }
 
 .card-modal_title {
-
   font-weight: 600;
   font-size: 20px;
   line-height: calc(24 / 20);
   margin-bottom: 5px;
-
 
   color: var(--accent-color);
 
@@ -178,26 +173,26 @@
 }
 
 .card-modal_info p {
-
   font-weight: 400;
-  line-height: 20px;
   line-height: calc(20 / 16);
-
+  padding: 0 10px;
 
   color: var(--prime-text-color);
 
   @include mq(desktop) {
-    font-weight: 400;
     font-size: 18px;
     line-height: calc(22 / 18);
   }
 }
 
+.card-modal_description {
+      max-height: 85px;
+      overflow: hidden;
+}
+
 .event-icon-ticket {
-
-  vertical-align: middle;
   margin-right: 9px;
-
+  vertical-align: middle;
 }
 
 .icon-ticket {
@@ -208,27 +203,32 @@
 }
 
 .btn-buy-tickets {
-    display: block;
-    width: 145px;
-    height: 40px;
-    margin: 16px 0;
-    padding: 9px 15px 10px;
+  display: block;
+  width: 145px;
+  height: 40px;
+  margin: 16px 0;
+  padding: 9px 15px 10px;
 
-    font-weight: 500;
-    line-height: calc(20 / 16);
+  text-align: center;
+  font-weight: 500;
+  line-height: calc(20 / 16);
 
-    background: var(--button-color);
-    color: var(--light-color);
-    border-radius: 5px;
+  background: var(--button-color);
+  color: var(--light-color);
+  border-radius: 5px;
 
-    @include mq(mobile-only) {
-        margin: 16px auto;
-    }
+  &:hover {
+    background: var(--button-hover-color);
+  }
 
-    @include mq(desktop) {
-        margin-top: 20px;
-        margin-bottom: 32px;
-    }
+  @include mq(mobile-only) {
+    margin: 16px auto;
+  }
+
+  @include mq(desktop) {
+    margin-top: 20px;
+    margin-bottom: 32px;
+  }
 }
 
 .btn-vip {
@@ -236,44 +236,53 @@
 }
 
 .btn-more-info {
-    display: block;
-    width: 230px;
-    height: 40px;
-    border: 1px solid var(--button-color);
-    border-radius: 5px;
+  display: block;
+  width: 230px;
+  height: 40px;
+  padding: 10px 5px;
+  margin: 0 auto;
 
-    font-weight: 500;
-    line-height: calc(20 / 16);
-    text-transform: uppercase;
-    background-color: transparent;
+  font-weight: 500;
+  line-height: calc(20 / 16);
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
 
-    color: var(--button-color);
+  border: 1px solid var(--button-color);
+  border-radius: 5px;
+  color: var(--button-color);
+
+  &:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+  }
 
   @include mq(tablet) {
     width: 255px;
-    width: 230px;
-    height: 40px;
     padding: 10px 5px;
-    margin: 0 auto;
-
-    font-weight: 500;
-    line-height: calc(20 / 16);
-    text-align: center;
-    text-transform: uppercase;
-    color: var(--button-color);
-    border: 1px solid var(--button-color);
-    border-radius: 5px;
-
-    @include mq(tablet) {
-        display: block;
-        width: 255px;
-    }
-}
-  .card-modal_close {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    background-color: transparent;
-    border: none;
   }
+}
+
+.card-modal_close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-color: transparent;
+  border: none;
+}
+
+.btn-arrow {
+  display: block;
+  margin: 4px auto 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover .icon-arrow{
+    fill: var(--accent-color);
+  }
+}
+
+.icon-arrow {
+  fill: var(--prime-text-color);
 }

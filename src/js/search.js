@@ -18,11 +18,10 @@ const markupSelect = countries
 
 refSelectCountry.insertAdjacentHTML('beforeend', markupSelect);
 
-markupEvents.then(events => renderEvents(events)); //вызов функции рендера по умолчанию
-//console.log(test);
+markupEvents.then(events => renderEvents(events));
 refSearchForm.addEventListener('submit', onSearch);
 refSearchForm.addEventListener('change', onSearch);
-console.log(markupEvents);
+
 function onSearch(e) {
   e.preventDefault();
   const query = refSearchEvent.value;

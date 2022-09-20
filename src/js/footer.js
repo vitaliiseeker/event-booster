@@ -1,31 +1,35 @@
-import { openModal, closeModal, isKeyPressed } from './modal.js';
+// import { openModal, closeModal, isKeyPressed } from './modal.js';
 
-export const refs = {
-  openModalBtn: document.querySelector('[data-modalFoter-open]'),
-  closeModalBtn: document.querySelector('[data-modalFoter-close]'),
-  modal: document.querySelector('[data-modalFooter]'),
+const refs = {
+  openModalBtn: document.querySelector('[data-modal-footer-open]'),
+  closeModalBtn: document.querySelector('[data-modal-footer-close]'),
+  modal: document.querySelector('[data-modal-footer]'),
 };
 
 refs.openModalBtn.addEventListener('click', openModal);
 refs.closeModalBtn.addEventListener('click', closeModal);
 
-// function isKeyPressed(evt) {
-//   if (evt.code === 'Escape') {
-//     closeModal();
-//   }
-// }
+function openModal() {
+  refs.modal.classList.remove('is-hidden');
+  document.addEventListener('keydown', isKeyPressed);
 
-// function openModal() {
-//   refs.modal.classList.remove('is-hidden');
-//   document.addEventListener('keydown', isKeyPressed);
-//   document.body.classList.toggle('scrollOff');
-// }
+  document.body.classList.add('no-scroll');
+  refs.modal.classList.add('animation');
+}
 
-// function closeModal() {
-//   refs.modal.classList.add('is-hidden');
-//   document.removeEventListener('keydown', isKeyPressed);
-//   document.body.classList.toggle('scrollOff');
-// }
+function closeModal() {
+  refs.modal.classList.add('is-hidden');
+  document.removeEventListener('keydown', isKeyPressed);
+  
+  document.body.classList.remove('no-scroll');
+  refs.modal.classList.remove('animation');
+}
+
+function isKeyPressed(evt) {
+  if (evt.code === 'Escape') {
+    closeModal();
+  }
+}
 
 document.addEventListener('click', function (e) {
   const target = e.target;
