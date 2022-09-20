@@ -1,5 +1,7 @@
 import { EventsApi } from './eventsApi';
 export const gallery = document.querySelector('.gallery');
+import imgPlace from '../../images/symbol-defs.svg';
+import imgBg from '../../images/symbol-defs.svg';
 
 const refGallery = document.querySelector('.gallery');
 const refPagination = document.querySelector('.pagination');
@@ -15,24 +17,33 @@ export function renderEvents(data) {
                       <div class="card__decore">
                       </div>
                       <div class = "card__img-wrap">
-                      <img class="card__img" src="${
+
+                      ${
                         elem.images
-                          ? '../images/card-svg/unload.svg'
-                          : elem.images[1].url
-                      }" alt="" />
+                          ? `<img class="card__img" src="${elem.images[1].url}" alt="" />`
+                          : `<svg class = "card-img__svg">
+                                <use href='${imgBg}#icon-unload'></use>
+                            </svg>`
+                      }  
+
+
+
+
                       </div>
-                      <div class = "card-desc__wrapper">
+
                       <p class="card__name">${elem.name}</p>
                       <p class="card__date">${elem.dates.start.localDate}</p>
                       <p class="card__place">
-
                         ${
                           place
-                            ? "<span class='card__icon'></span>" + place
+                            ? `<svg class = 'icon-place'>
+                                <use   width= 10px height = 10px
+                                href='${imgPlace}#icon-location'></use>
+                                </svg>` + place
                             : ''
                         }
                       </p>
-                      </div>
+
                       </li>
           
           `
@@ -104,3 +115,14 @@ function renderPagination() {
   }
   refPagination.innerHTML = pagination;
 }
+
+/* 
+
+                      <img class="card__img" src="${
+                        elem.images
+                          ? '../images/card-svg/unload.svg'
+                          : elem.images[1].url
+                      }" alt="" />
+*/
+
+//                      <div class = "card-desc__wrapper">

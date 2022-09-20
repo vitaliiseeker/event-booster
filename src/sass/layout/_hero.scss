@@ -8,6 +8,7 @@ main {
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
   row-gap: 32px;
+  padding-top: 30px;
 
   @include mq(tablet) {
     grid-template-columns: repeat(4, 1fr);
@@ -29,6 +30,8 @@ main {
   text-align: center;
   cursor: pointer;
 
+  padding: 0 5px;
+
   transition: var(--animation);
 
   animation: card-anim 1s;
@@ -49,18 +52,40 @@ main {
 
   @include mq(tablet) {
     width: 152px;
-    height: 325px;
   }
 
   @include mq(desktop) {
     width: 288px;
-    height: 457px;
   }
 }
 
 .card__img-wrap {
-  // background-image: url(../images/symbol-defs.svg#icon-unload);
-  background-repeat: no-repeat;
+  width: 120px;
+  height: 150px;
+  @include mq(tablet) {
+    width: 141px;
+    height: 178px;
+  }
+
+  @include mq(desktop) {
+    width: 267px;
+    height: 337px;
+  }
+}
+
+.card-img__svg {
+  width: 130px;
+  height: 130px;
+
+  @include mq(tablet) {
+    width: 170px;
+    height: 170px;
+  }
+
+  @include mq(desktop) {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .card__img {
@@ -99,31 +124,15 @@ main {
   }
 }
 
-.card-desc__wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  padding: 5px 10px;
-
-  height: 140px;
-
-  @include mq(tablet) {
-    font-size: 16px;
-    height: 130px;
-  }
-
-  @include mq(desktop) {
-    padding-top: 10px;
-    height: 100px;
-  }
-}
-
 .card__name {
   display: block;
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.2;
+
+  padding: 5px 0;
+
   color: var(--accent-color);
 
   @include mq(tablet) {
@@ -142,9 +151,11 @@ main {
 }
 
 .card__place {
-  display: block;
   font-weight: 600;
   font-size: 12px;
+
+  padding: 5px 0;
+
   color: var(--light-color);
 
   @include mq(tablet) {
@@ -152,14 +163,11 @@ main {
   }
 }
 
-.card__icon {
-  display: inline-block;
-
+.icon-place {
+  fill: #fff;
   width: 10px;
   height: 10px;
-
-  background-image: url(../images/card-svg/place.svg);
-  background-repeat: no-repeat;
+  margin-right: 5px;
 }
 
 .pagination {
