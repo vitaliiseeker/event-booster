@@ -54,7 +54,7 @@
   width: 280px;
   min-height: 400px;
   border-radius: 150px 0px;
-  padding: 80px 0 100px;
+  padding: 50px 0 100px;
   transform: translate(-50%, 0);
   background-color: var(--modal-primary-bg-color);
 
@@ -117,6 +117,21 @@
   @include mq(desktop) {
     width: 427px;
     max-height: 585px;
+  }
+}
+
+.card-modal_unload-svg {
+  width: 150px;
+  height: 150px;
+  
+  @include mq(tablet) {
+    width: 249px;
+    height: 440px;
+  }
+
+  @include mq(desktop) {
+    width: 420px;
+    height: 600px;
   }
 }
 
@@ -184,8 +199,12 @@
 }
 
 .card-modal_description {
-  max-height: 90px;
+  max-height: 100px;
   overflow: hidden;
+
+  @include mq(desktop) {
+    max-height: 90px;
+  }
 }
 
 .card-modal_location {
