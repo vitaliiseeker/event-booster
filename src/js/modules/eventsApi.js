@@ -59,7 +59,7 @@ export class EventsApi {
     const response = await searchResult.data;
 
     if (!response._embedded) {
-      throw new Error('Oops, not found!');
+      throw new Error;
     }
 
     EventsApi.totalPages =
