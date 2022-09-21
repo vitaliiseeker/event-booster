@@ -1,8 +1,7 @@
 import imageSvg from '../../images/sprite.svg';
 import { addEventImages } from './addEventImages';
-import arrow from '../../images/sprite.svg'
+import arrow from '../../images/symbol-defs.svg'
 import { openModal, closeModal } from '../modal';
-
 
 const refsModal = document.querySelector(".js-event_modal");
 // const refCloseModal = document.querySelector('[data-modal-close]');
@@ -15,7 +14,7 @@ function createBtnMore() {
 
     if (refsBtnMore) {
         refsBtnMore.addEventListener('click', e => {
-            const maxHeight = "90px";
+            const maxHeight = document.body.offsetWidth < 1280 ? "100px" : "90px";
             if (
                 refsTextDesc.style.maxHeight === maxHeight ||
                 refsTextDesc.style.maxHeight === ''
@@ -50,10 +49,9 @@ export async function createMarkupEventModal(arr) {
                 ? ''
                 : `<button class="btn-arrow" type="button">
                 <svg class="icon icon-arrow" width="15" height="10">
-                    <use href="${arrow}#polygon"></use>
+                    <use href="${arrow}#icon-more-text"></use>
                 </svg>
             </button>`;
-        // const test = `${imageSvg}#icon-unload`;
         let strPriceList = '';
 
         if (!priceRanges) {
@@ -89,7 +87,6 @@ export async function createMarkupEventModal(arr) {
                 <a class="btn-buy-tickets ${btnVip}" href="${url}" target="_blank">BUY TICKETS</a>`;
             });
         }
-        images = null;
         return acc +
             `<div class="card-modal is-hidden">
             <button class="card-modal_close" data-modal-close>
