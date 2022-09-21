@@ -9,7 +9,6 @@
     text-align: center;
     color: var(--secondary-text-color);
 
-
     @include mq(tablet) {
         width: auto;
         font-size: 16px;
@@ -52,11 +51,17 @@ footer {
 .btn-developers {
     color: var(--secondary-text-color);
     background: transparent;
-    border: 0px;
     cursor: pointer;
+
+    border: 2px dashed var(--accent-color) !important;
+    border-radius: 5px;
+    margin-left: 10px;
+    
 
     &:focus,
     &:hover {
         color: var(--accent-color);
+        transform: scale(1.1);
+        box-shadow: 0px 0px 20px #f80bfd, inset 0px 0px 2px #f80bfd;
     }
 }
