@@ -1,6 +1,6 @@
 import imageSvg from '../../images/sprite.svg';
-import { addEventImages } from './addEventImages';
 import arrow from '../../images/sprite.svg'
+import { addEventImages } from './addEventImages';
 import { openModal, closeModal } from '../modal';
 
 const refsModal = document.querySelector(".js-event_modal");
@@ -86,6 +86,7 @@ export async function createMarkupEventModal(arr) {
                 <a class="btn-buy-tickets ${btnVip}" href="${url}" target="_blank">BUY TICKETS</a>`;
             });
         }
+        images = null;
         return acc +
             `<div class="card-modal is-hidden">
             <button class="card-modal_close" data-modal-close>
@@ -94,17 +95,15 @@ export async function createMarkupEventModal(arr) {
                 </svg>
             </button>
             <div class="card-modal_box-img">
-                ${images && images.length != 0
-                ? `<img class="card-modal_img-small" src="${addEventImages(images).url
-                }" alt="">`
-                : `<svg class="card-modal_test-svg" width="40" height="40">
-                    <use href="${imageSvg}#icon-unload"></use>
-                </svg>`}
+                ${images && images.length !== 0
+            ? `<img class="card-modal_img-small" src="${addEventImages(images).url
+            }" alt="">`
+            : ""}
             </div>
             <div class="card-modal_box-info">
-                ${images && images.length != 0
-                ? `<img class="card-modal_img-original" src="${addEventImages(images).url}" alt="">`
-                : `<svg class="card-modal_style-svg" width="420" height="600">
+                ${images && images.length !== 0
+            ? `<img class="card-modal_img-original" src="${addEventImages(images).url}" alt="">`
+            : `<svg class="card-modal_unload-svg" width="420" height="600">
                     <use href="${imageSvg}#icon-unload"></use>
                 </svg>`}         
                 <ul class="card-modal_list">
@@ -117,8 +116,8 @@ export async function createMarkupEventModal(arr) {
                         <h3 class="card-modal_title">WHEN</h3>
                         <p>${start.localDate}</p>
                         <p>${start.localTime
-                ? start.localTime.slice(0, -3)
-                : ""} (${venues[0].timezone})</p>
+                        ? start.localTime.slice(0, -3)
+                        : ""} (${venues[0].timezone})</p>
                     </li>
                     <li class="card-modal_info">
                         <h3 class="card-modal_title">WHERE</h3>
@@ -128,8 +127,8 @@ export async function createMarkupEventModal(arr) {
                         </svg>
                         <p class="card-modal_location">${venues[0].country.name}</p>
                         <p>${venues[0].name
-                ? venues[0].name
-                : ""}</p>
+                        ? venues[0].name
+                        : ""}</p>
                         </a> 
                     </li>
                     <li class="card-modal_info">
@@ -149,7 +148,6 @@ export async function createMarkupEventModal(arr) {
     refsModal.innerHTML = await renderModal;
     createBtnMore();
     openModal();
-
 
     refCloseModal = document.querySelector('[data-modal-close]');
     refCloseModal.addEventListener('click', () => closeModal());
