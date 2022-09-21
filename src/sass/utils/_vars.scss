@@ -1,8 +1,6 @@
 :root {
   --font-family: 'Montserrat';
 
-  --main-radius: 50px 0;
-
   --light-color: #ffffff;
   --dark-color: #000000;
   --prime-text-color: #0e0e0e;
@@ -23,7 +21,10 @@
   --modal-primary-bg-color: #fff2fd;
   --modal-secondary-color: #c4c4c4;
 
+  --box-shadow-color: rgba(220, 86, 197, 0.72);
+
   --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  --box-shadow-color: rgba(220, 86, 197, 0.72);
+  --main-radius: 50px 0;
+
 }

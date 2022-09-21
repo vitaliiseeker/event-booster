@@ -1,40 +1,39 @@
 .footer-text {
     font-size: 14px;
-    line-height: 17px;
+    line-height: calc(17 / 14);
     text-align: center;
     color: var(--secondary-text-color);
 
     @include mq(tablet) {
         font-size: 16px;
-        line-height: 20px;
+        line-height: calc(20 / 16);
         text-align: center;
-        color: var(--secondary-text-color);
     }
 }
 
 footer {
 
-    background-image: url(./../images/footer-decoratioin/noise_body.png);
     background-color: var(--prime-text-color);
+    background-image: url(./../images/footer/noise_body.png);
     padding-bottom: 24px;
 
     @include mq(tablet) {
-        padding-bottom: 40px;
         display: flex;
+        padding-bottom: 40px;
         align-items: flex-end;
 
-        background-image: url(./../images/footer-decoratioin/ellipse5-tab.png),
-                url(./../images/footer-decoratioin/ellipse2-tab.png), url(./../images/footer-decoratioin/vertical-line-left-tab.png),
-                url(./../images/footer-decoratioin/vertical-line-right-tab.png);
-            background-position: bottom 0 left 22px, bottom 0 left 48px, bottom 0 left 85px,
-                bottom 0 right 85px;
-            background-repeat: no-repeat;
+        background-image: url(./../images/footer/ellipse5-tab.png),
+            url(./../images/footer/ellipse2-tab.png), url(./../images/footer/vertical-line-left-tab.png),
+            url(./../images/footer/vertical-line-right-tab.png);
+        background-position: bottom 0 left 22px, bottom 0 left 48px, bottom 0 left 85px,
+            bottom 0 right 85px;
+        background-repeat: no-repeat;
 
         @include mq(desktop) {
-            background-image: url(./../images/footer-decoratioin/ellipse10.png), url(./../images/footer-decoratioin/ellipse11.png),
-                    url(./../images/footer-decoratioin/vertical-line-small.png), url(./../images/footer-decoratioin/vertical-line-small.png);
-                background-position: bottom 0 left 10px, bottom 0 left 50px, bottom 0 left 20px,
-                    bottom -60px right -830px;       
+            background-image: url(./../images/footer/ellipse10.png), url(./../images/footer/ellipse11.png),
+                url(./../images/footer/vertical-line-small.png), url(./../images/footer/vertical-line-small.png);
+            background-position: bottom 0 left 10px, bottom 0 left 50px, bottom 0 left 20px,
+                bottom -60px right -830px;
         }
     }
 }
@@ -44,14 +43,13 @@ footer {
 }
 
 .btn-developers {
+    color: var(--secondary-text-color);
     background: transparent;
     border: 0px;
-    color: var(--secondary-text-color);
     cursor: pointer;
 
     &:focus,
-    &:hover{
-            color: var(--accent-color);
-        }
+    &:hover {
+        color: var(--accent-color);
+    }
 }
-

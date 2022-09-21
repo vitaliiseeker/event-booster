@@ -7,22 +7,18 @@ body {
 
   color: var(--light-color);
 
-  background-image: linear-gradient(180deg, var(--overlay-gradient-prymary-color), var(--overlay-gradient-secondary-color)),
-    linear-gradient(180deg, var(--overlay-color), var(--overlay-color)),
-    url("../images/background/pic_320.png");
+  background-image: url("../images/background/pic_320.png");
 
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% 364px;
 
   @include mq(mobile) {
-    background-image: linear-gradient(180deg, var(--overlay-gradient-prymary-color), var(--overlay-gradient-secondary-color)),
-      linear-gradient(180deg, var(--overlay-color), var(--overlay-color)), url("../images/background/pic_768.png");
+    background-image: url("../images/background/pic_768.png");
   }
 
   @include mq(desktop) {
-    background-image: linear-gradient(180deg, var(--overlay-gradient-prymary-color), var(--overlay-gradient-secondary-color)),
-      linear-gradient(180deg, var(--overlay-color), var(--overlay-color)), url("../images/background/pic_1280.png");
+    background-image: url("../images/background/pic_1280.png");
 
     background-size: 100% 446px;
   }

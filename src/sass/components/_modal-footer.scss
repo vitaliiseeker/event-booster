@@ -1,144 +1,158 @@
-// .modal_footer {
-//   width: 272px;
-//   height: 715px;
-//   background-color: var(--modal-primary-bg-color);
-//   border-radius: 70px 0;
-//   padding-top: 50px;
-//   padding-right: 10px;
-//   padding-left: 10px;
-//   position: fixed;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
+.modal_footer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
 
-//   @include mq(tablet) {
-//     width: 595px;
-//     height: 670px;
-//     border-radius: 200px 0px;
-//     padding-top: 70px;
-//     padding-left: 40px;
-//     padding-right: 40px;
-//   }
+  padding-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
 
-//   @include mq(desktop) {
-//     border-radius: 200px 0px;
-//     padding-right: 100px;
-//     padding-left: 100px;
-//     padding-top: 70px;
-//     width: 850px;
-//     height: 700px;
-//   }
-// }
+  width: 272px;
+  height: 715px;
 
-// .modal-footer_title {
-//   text-align: center;
-//   text-transform: uppercase;
-//   letter-spacing: normal;
-//   margin-bottom: 20px;
-//   font-weight: 600;
-//   font-size: 20px;
-//   line-height: 24px;
-//   color: var(--accent-color);
+  background-color: var(--modal-primary-bg-color);
+  border-radius: 70px 0;
 
-//   @include mq(tablet) {
-//     font-size: 30px;
-//     line-height: 20px;
-//     margin-bottom: 25px;
-//   }
+  transform: translate(-50%, -50%);
 
-//   @include mq(desktop) {
-//     font-size: 40px;
-//   }
-// }
+  @include mq(tablet) {
+    padding-top: 70px;
+    padding-left: 40px;
+    padding-right: 40px;
 
-// .footer-modal_img {
-//   background-color: var(--light-color);
-//   width: 100px;
-//   height: 150px;
-//   margin: 0;
-//   object-fit: cover;
-//   border-radius: 50px 0;
+    width: 595px;
+    height: 670px;
 
-//   @include mq(tablet) {
-//     width: 150px;
-//     height: 200px;
-//   }
+    border-radius: 200px 0px;
+  }
 
-//   @include mq(desktop) {
-//     width: 200px;
-//     height: 210px;
-//   }
-// }
+  @include mq(desktop) {
+    padding-top: 70px;
+    padding-left: 100px;
+    padding-right: 100px;
 
-// .footer-modal_list {
-//   display: flex;
-//   flex-wrap: wrap;
-// }
+    width: 850px;
+    height: 700px;
 
-// .footer-modal_item {
-//   margin-right: auto;
-//   margin-left: auto;
-//   margin-bottom: 10px;
+    border-radius: 200px 0px;
+  }
+}
 
-//   @include mq(tablet) {
-//     margin-bottom: 15px;
-//   }
+.modal-footer_title {
+  margin-bottom: 20px;
 
-//   @include mq(desktop) {
-//     margin-bottom: 20px;
-//     width: 200px;
-//   }
-// }
+  font-weight: 600;
+  font-size: 20px;
+  line-height: calc(24 / 20);
+  text-align: center;
+  text-transform: uppercase;
 
-// .footer-modal_text {
-//   text-align: center;
-//   width: 100px;
-//   font-size: 16px;
-//   line-height: 20px;
-//   color: var(--prime-text-color);
+  color: var(--accent-color);
 
-//   @include mq(tablet) {
-//     width: 150px;
-//     margin-top: 5px;
-//   }
+  @include mq(tablet) {
+    margin-bottom: 25px;
+    font-size: 30px;
+    line-height: 20px;
+  }
 
-//   @include mq(desktop) {
-//     width: 200px;
-//     font-size: 20px;
-//   }
-// }
+  @include mq(desktop) {
+    font-size: 40px;
+  }
+}
 
-// .modal-footer_close {
-//   position: absolute;
-//   width: 20px;
-//   height: 20px;
-//   top: 25px;
-//   right: 25px;
-//   background: transparent;
-//   border: 0px;
-//   cursor: pointer;
+.footer-modal_img {
+  margin: 0;
 
-//   @include mq(desktop) {
-//     top: 30px;
-//     right: 30px;
-//   }
-// }
+  width: 100px;
+  height: 150px;
 
-// .modal-footer_close-svg {
-//   width: 17px;
-//   height: 17px;
+  background-color: var(--light-color);
+  border-radius: 50px 0;
 
-//   fill: var(--modal-secondary-color);
+  object-fit: cover;
 
-//   @include mq(desktop) {
-//     width: 20px;
-//     height: 20px;
-//   }
+  @include mq(tablet) {
+    width: 150px;
+    height: 200px;
+  }
 
-//   &:focus,
-//   &:hover {
-//     fill: var(--button-color);
-//   }
-// }
+  @include mq(desktop) {
+    width: 200px;
+    height: 210px;
+  }
+}
 
+.footer-modal_list {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.footer-modal_item {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+
+  @include mq(tablet) {
+    margin-bottom: 15px;
+  }
+
+  @include mq(desktop) {
+    margin-bottom: 20px;
+    width: 200px;
+  }
+}
+
+.footer-modal_text {
+  width: 100px;
+
+  font-size: 16px;
+  line-height: calc(20 / 16);
+  text-align: center;
+
+  color: var(--prime-text-color);
+
+  @include mq(tablet) {
+    width: 150px;
+    margin-top: 5px;
+  }
+
+  @include mq(desktop) {
+    width: 200px;
+    font-size: 20px;
+  }
+}
+
+.modal-footer_close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+
+  width: 20px;
+  height: 20px;
+
+  background: transparent;
+  border: 0px;
+  cursor: pointer;
+
+  @include mq(desktop) {
+    top: 30px;
+    right: 30px;
+  }
+}
+
+.modal-footer_close-svg {
+  width: 17px;
+  height: 17px;
+
+  fill: var(--modal-secondary-color);
+
+  @include mq(desktop) {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:focus,
+  &:hover {
+    fill: var(--button-color);
+  }
+}

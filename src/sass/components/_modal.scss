@@ -10,7 +10,7 @@
 
   background: var(--backdrop-bg-color);
   opacity: 1;
-  // overflow-y: scroll;
+  overflow-y: scroll;
   backdrop-filter: blur(3px);
 
   transition: opacity, visibility var(--animation);
@@ -22,17 +22,13 @@
   }
 }
 
-// .no-scroll {
-//   overflow: hidden;
-// }
-
 .no-scroll {
 
-  @include mq(desktop) {
-    overflow: hidden;
-    margin-right: 20px;
-    background-color: black;
-  }
+  // @include mq(desktop) {
+  margin-right: 20px;
+  background-color: black;
+  overflow: hidden;
+  // }
 }
 
 .modal {
@@ -41,13 +37,13 @@
   margin-right: auto;
 
   @include mq(tablet) {
-    padding: 100px 50px;
     position: absolute;
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, -50%) scale(1);
+    padding: 100px 50px;
 
+    transform: translate(-50%, -50%) scale(1);
     transition: transform var(--animation);
 
     .backdrop.is-hidden & {
@@ -60,23 +56,26 @@
   position: absolute;
   top: 1%;
   left: 50%;
+
+  padding: 80px 0 100px;
   width: 280px;
   min-height: 400px;
+
+  background-color: var(--modal-primary-bg-color);
   border-radius: 150px 0px;
   padding: 50px 0 100px;
   transform: translate(-50%, 0);
-  background-color: var(--modal-primary-bg-color);
 
   @include mq(tablet) {
-    width: 704px;
-    border-radius: 230px 0px;
     padding-top: 32px;
     padding-bottom: 40px;
+    width: 704px;
+    border-radius: 230px 0px;
   }
 
   @include mq(desktop) {
-    width: 1000px;
     padding-top: 30px;
+    width: 1000px;
   }
 }
 
@@ -97,19 +96,19 @@
 }
 
 .card-modal_img-small {
-  height: 102px;
-  width: 102px;
-  border-radius: 50%;
   margin: 0 auto;
+  width: 102px;
+  height: 102px;
+  border-radius: 50%;
 
   @include mq(tablet) {
-    height: 70px;
     width: 70px;
+    height: 70px;
   }
 
   @include mq(desktop) {
-    height: 132px;
     width: 132px;
+    height: 132px;
   }
 }
 
@@ -132,7 +131,7 @@
 .card-modal_unload-svg {
   width: 150px;
   height: 150px;
-  
+
   @include mq(tablet) {
     width: 249px;
     height: 440px;
@@ -177,10 +176,11 @@
 }
 
 .card-modal_title {
+  margin-bottom: 5px;
+
   font-weight: 600;
   font-size: 20px;
   line-height: calc(24 / 20);
-  margin-bottom: 5px;
 
   color: var(--accent-color);
 
@@ -234,17 +234,18 @@
 
 .btn-buy-tickets {
   display: block;
-  width: 145px;
-  height: 40px;
   margin: 16px 0;
   padding: 9px 15px 10px;
 
-  text-align: center;
+  width: 145px;
+  height: 40px;
+
   font-weight: 500;
   line-height: calc(20 / 16);
+  text-align: center;
 
-  background: var(--button-color);
   color: var(--light-color);
+  background: var(--button-color);
   border-radius: 5px;
 
   &:hover {
@@ -267,29 +268,31 @@
 
 .btn-more-info {
   display: block;
+  margin: 0 auto;
+  padding: 10px 5px;
+
   width: 230px;
   height: 40px;
-  padding: 10px 5px;
-  margin: 0 auto;
 
   font-weight: 500;
   line-height: calc(20 / 16);
   text-align: center;
   text-transform: uppercase;
+
+  color: var(--button-color);
   background-color: transparent;
 
   border: 1px solid var(--button-color);
   border-radius: 5px;
-  color: var(--button-color);
 
   &:hover {
-    border-color: var(--accent-color);
     color: var(--accent-color);
+    border-color: var(--accent-color);
   }
 
   @include mq(tablet) {
-    width: 255px;
     padding: 10px 5px;
+    width: 255px;
   }
 }
 
@@ -297,10 +300,10 @@
   position: absolute;
   top: 24px;
   right: 24px;
-
   padding: 10px;
 
   background-color: transparent;
+
   border: none;
   cursor: pointer;
 
@@ -312,8 +315,9 @@
 .btn-arrow {
   display: block;
   margin: 4px auto 0;
-  border: none;
+
   background-color: transparent;
+  border: none;
   cursor: pointer;
 
   &:hover .icon-arrow {
@@ -332,51 +336,61 @@
 }
 
 .modal_footer {
-  width: 272px;
-  height: 715px;
-  background-color: var(--modal-primary-bg-color);
-  border-radius: 70px 0;
-  padding-top: 50px;
-  padding-right: 10px;
-  padding-left: 10px;
   position: fixed;
   top: 50%;
   left: 50%;
+
+  padding-top: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  width: 272px;
+  height: 715px;
+
+  background-color: var(--modal-primary-bg-color);
+  border-radius: 70px 0;
+
   transform: translate(-50%, -50%);
 
   @include mq(tablet) {
-    width: 595px;
-    height: 670px;
-    border-radius: 200px 0px;
     padding-top: 70px;
     padding-left: 40px;
     padding-right: 40px;
+
+    width: 595px;
+    height: 670px;
+
+    border-radius: 200px 0px;
   }
 
   @include mq(desktop) {
-    border-radius: 200px 0px;
     padding-right: 100px;
     padding-left: 100px;
     padding-top: 70px;
+
     width: 850px;
     height: 700px;
+
+    border-radius: 200px 0px;
   }
 }
 
 .modal-footer_title {
+  margin-bottom: 20px;
+
+  font-weight: 600;
+  font-size: 20px;
+  line-height: calc(24 / 20);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: normal;
-  margin-bottom: 20px;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 24px;
+
   color: var(--accent-color);
 
   @include mq(tablet) {
+    margin-bottom: 25px;
     font-size: 30px;
     line-height: 20px;
-    margin-bottom: 25px;
   }
 
   @include mq(desktop) {
@@ -385,12 +399,13 @@
 }
 
 .footer-modal_img {
-  background-color: var(--light-color);
+  margin: 0;
   width: 100px;
   height: 150px;
-  margin: 0;
-  object-fit: cover;
+
+  background-color: var(--light-color);
   border-radius: 50px 0;
+  object-fit: cover;
 
   @include mq(tablet) {
     width: 150px;
@@ -424,10 +439,12 @@
 }
 
 .footer-modal_text {
-  text-align: center;
   width: 100px;
+
   font-size: 16px;
-  line-height: 20px;
+  line-height: calc(20 /16);
+  text-align: center;
+
   color: var(--prime-text-color);
 
   @include mq(tablet) {
@@ -443,10 +460,12 @@
 
 .modal-footer_close {
   position: absolute;
-  width: 20px;
-  height: 20px;
   top: 25px;
   right: 25px;
+
+  width: 20px;
+  height: 20px;
+
   background: transparent;
   border: 0px;
   cursor: pointer;
@@ -483,6 +502,7 @@
 .animation {
   animation-duration: 0.55s;
   animation-fill-mode: both;
+  animation-name: zoomIn;
   // animation-name: pulse;
   //  animation-name: bounceInDown;
   //  animation-name: bounceInLeft;
@@ -494,7 +514,6 @@
   //  animation-name: fadeInUpBig;
   // animation-name: rotateInDownLeft;
   //  animation-name: rollIn;
-    animation-name: zoomIn;
   //  animation-name: slideInDown;
   // animation-name: slideInLeft;
 }

@@ -1,6 +1,6 @@
 import imageSvg from '../../images/sprite.svg';
 import { addEventImages } from './addEventImages';
-import arrow from '../../images/symbol-defs.svg'
+import arrow from '../../images/sprite.svg'
 import { openModal, closeModal } from '../modal';
 
 const refsModal = document.querySelector(".js-event_modal");
@@ -95,7 +95,7 @@ export async function createMarkupEventModal(arr) {
                 </svg>
             </button>
             <div class="card-modal_box-img">
-                ${images && !images.length
+                ${images && images.length != 0
                 ? `<img class="card-modal_img-small" src="${addEventImages(images).url
                 }" alt="">`
                 : `<svg class="card-modal_test-svg" width="40" height="40">
@@ -103,7 +103,7 @@ export async function createMarkupEventModal(arr) {
                 </svg>`}
             </div>
             <div class="card-modal_box-info">
-                ${images && !images.length
+                ${images && images.length != 0
                 ? `<img class="card-modal_img-original" src="${addEventImages(images).url}" alt="">`
                 : `<svg class="card-modal_style-svg" width="420" height="600">
                     <use href="${imageSvg}#icon-unload"></use>

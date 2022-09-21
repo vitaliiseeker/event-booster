@@ -42,11 +42,12 @@
   }
 
   & span {
+    display: inline-block;
+
     text-shadow: 0.5px 0.5px 2px rgb(255 13 190 / 80%),
       -2px 0.5px 2px rgb(255 13 190 / 55%), 0 -10px 50px, 0 0 0.01em #dc56c5,
       0 2px 1px #000;
 
-    display: inline-block;
     transition: all 0.5s;
     animation: animate 3s infinite;
   }
@@ -77,9 +78,9 @@
 
   @keyframes animate {
     0% {
+      margin: 0;
       color: var(--accent-color);
       transform: translateY(0);
-      margin: 0;
     }
 
     10% {
@@ -91,13 +92,11 @@
 }
 
 .slide-down {
-  animation-name: slideDown;
-
-  animation-duration: 1s;
-
-  animation-timing-function: ease;
-
   visibility: visible;
+
+  animation-name: slideDown;
+  animation-duration: 1s;
+  animation-timing-function: ease;
 }
 
 @keyframes slideDown {

@@ -2,7 +2,7 @@ import './modules/eventsApi';
 // import { refs } from './footer';
 const refModal = document.querySelector('[data-modal]');
 const refCloseModal = document.querySelector('[data-modal-close]');
-// import createMarkupEventModal from './modules/markupEventModal';
+import createMarkupEventModal from './modules/markupEventModal';
 
 export function openModal() {
   refModal.classList.remove('is-hidden');

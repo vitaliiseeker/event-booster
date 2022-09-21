@@ -1,5 +1,5 @@
 main {
-  background-image: url(../images/background/bg-body.png);
+  background-image: url(../images/background/bg-body_1280.png);
 }
 
 .gallery {
@@ -62,6 +62,7 @@ main {
 .card__img-wrap {
   width: 120px;
   height: 150px;
+
   @include mq(tablet) {
     width: 141px;
     height: 178px;
