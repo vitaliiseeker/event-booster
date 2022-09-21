@@ -14,14 +14,11 @@ paginationPage.addEventListener('click', e => {
 });
 
 gallery.addEventListener('click', e => {
-  // console.log(e.target.tagName.closest('li'));
 
-  // if (e.target.tagName.closest('li') !== "LI") {
-  //   return;
-  // }
+  if (!e.target.closest('li')) return;
 
   const id = e.target.closest('li').dataset.id;
-
   EventsApi.fetchEventsById(id).then(r => createMarkupEventModal(r));
+
 });
 

@@ -22,11 +22,11 @@ main {
 }
 
 .card {
-  width: 130px;
+  position: relative;
   display: block;
+  width: 130px;
   border-radius: var(--main-radius);
 
-  position: relative;
   text-align: center;
   cursor: pointer;
 
@@ -108,16 +108,16 @@ main {
 }
 
 .card__decore {
+  position: absolute;
+  top: 0;
+  right: 0;
+
   width: 120px;
   height: 112px;
 
   border-radius: var(--main-radius);
   outline: 1px solid var(--accent-color);
   opacity: 30%;
-
-  position: absolute;
-  top: 0;
-  right: 0;
 
   @include mq(desktop) {
     width: 227px;
@@ -165,10 +165,10 @@ main {
 }
 
 .icon-place {
-  fill: #fff;
+  margin-right: 5px;
   width: 10px;
   height: 10px;
-  margin-right: 5px;
+  fill: #fff;
 }
 
 .pagination {

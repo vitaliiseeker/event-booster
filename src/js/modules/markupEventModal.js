@@ -4,7 +4,6 @@ import arrow from '../../images/sprite.svg'
 import { openModal, closeModal } from '../modal';
 
 const refsModal = document.querySelector(".js-event_modal");
-// const refCloseModal = document.querySelector('[data-modal-close]');
 
 let refCloseModal = null;
 
@@ -150,6 +149,7 @@ export async function createMarkupEventModal(arr) {
     refsModal.innerHTML = await renderModal;
     createBtnMore();
     openModal();
+
 
     refCloseModal = document.querySelector('[data-modal-close]');
     refCloseModal.addEventListener('click', () => closeModal());

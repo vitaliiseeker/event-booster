@@ -1,10 +1,7 @@
 import { EventsApi } from './modules/eventsApi';
 import countries from './data/countries.json';
-import {
-  refPagination,
-  renderEvents,
-  gallery,
-} from '../js/modules/markupGallery';
+import { renderEvents, gallery } from '../js/modules/markupGallery';
+import { refPagination } from "./modules/markupPagination";
 import pictureWay from '../images/error.png';
 
 const refSearchForm = document.querySelector('.js-search-form');
