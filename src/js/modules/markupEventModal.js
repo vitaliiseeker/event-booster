@@ -86,7 +86,6 @@ export async function createMarkupEventModal(arr) {
                 <a class="btn-buy-tickets ${btnVip}" href="${url}" target="_blank">BUY TICKETS</a>`;
             });
         }
-        images = null;
         return acc +
             `<div class="card-modal is-hidden">
             <button class="card-modal_close" data-modal-close>
