@@ -1,4 +1,3 @@
-// import { EventsApi } from './eventsApi';
 export const gallery = document.querySelector('.gallery');
 import imgPlace from '../../images/sprite.svg';
 import imgBg from '../../images/sprite.svg';
