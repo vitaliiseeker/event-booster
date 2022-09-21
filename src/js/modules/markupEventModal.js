@@ -116,11 +116,11 @@ export async function createMarkupEventModal(arr) {
                         <p>${start.localDate}</p>
                         <p>${start.localTime
                         ? start.localTime.slice(0, -3)
-                        : ""} (${venues[0].timezone})</p>
+                        : ""} (${venues[0].timezone ? venues[0].timezone : "no info"})</p>
                     </li>
                     <li class="card-modal_info">
                         <h3 class="card-modal_title">WHERE</h3>
-                        <a class="card-modal_maps" href="https://www.google.com/maps/@${venues[0].location.latitude},${venues[0].location.longitude},14z" target="_blank">
+                        <a class="card-modal_maps" href="https://www.google.com/maps/@${venues[0].location ? venues[0].location.latitude : ""},${venues[0].location ? venues[0].location.longitude : ""},14z" target="_blank">
                         <svg class="card-modal_location-svg" width="17" height="17">
                             <use href="${imageSvg}#icon-location"></use>
                         </svg>
