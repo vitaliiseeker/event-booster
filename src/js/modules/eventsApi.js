@@ -24,9 +24,8 @@ export class EventsApi {
    */
   static async fetchEvents(page = 0, query = '', country = '') {
     const endPoint = `${EventsApi.baseEndPoint}events.json`;
-    if (page) {
-      EventsApi.page = page;
-    }
+    EventsApi.page = page;
+   
     if (query) {
       EventsApi.query = query;
     }
