@@ -947,7 +947,7 @@ body {
     padding-left: 100px;
     padding-right: 100px;
     width: 850px;
-    height: 700px;
+    height: 810px;
     border-radius: 200px 0px;
   }
 }
@@ -1022,6 +1022,7 @@ body {
   font-size: 16px;
   line-height: 1.25;
   text-align: center;
+  margin-bottom: 16px;
   color: var(--prime-text-color);
 }
 @media screen and (min-width: 768px) {
@@ -1067,6 +1068,35 @@ body {
 }
 .modal-footer_close-svg:focus, .modal-footer_close-svg:hover {
   fill: var(--button-color);
+}
+
+.social__list {
+  display: flex;
+  justify-content: center;
+}
+
+.social__item {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin-right: 6px;
+  border-radius: 50%;
+  fill: var(--modal-secondary-color);
+  background-color: var(--light-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social__item:hover, .social__item:focus {
+  background: var(--accent-color);
+  fill: var(--light-color);
+}
+
+.social__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
 }
 
 .header {
@@ -1552,6 +1582,7 @@ main {
 
 .pagination__btn:hover {
   color: var(--accent-color);
+  box-shadow: 5px, 5px, 12px 15px -7px var(--accent-color);
 }
 
 .current {
@@ -1638,9 +1669,58 @@ footer {
 .btn-developers {
   color: var(--secondary-text-color);
   background: transparent;
-  border: 0px;
   cursor: pointer;
+  border: 2px dashed var(--accent-color) !important;
+  border-radius: 5px;
+  margin-left: 10px;
 }
 .btn-developers:focus, .btn-developers:hover {
   color: var(--accent-color);
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px #f80bfd, inset 0px 0px 2px #f80bfd;
+}
+
+.scroll-up {
+  width: 70px;
+  height: 70px;
+  border: none;
+  background-color: transparent;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 20;
+}
+@media screen and (min-width: 768px) {
+  .scroll-up {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .scroll-up {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+.scroll-up-svg {
+  position: absolute;
+  fill: var(--accent-color);
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+@media screen and (min-width: 768px) {
+  .scroll-up-svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .scroll-up-svg {
+    width: 50px;
+    height: 50px;
+  }
 }/*# sourceMappingURL=index.css.map */

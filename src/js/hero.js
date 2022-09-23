@@ -21,4 +21,3 @@ gallery.addEventListener('click', e => {
   EventsApi.fetchEventsById(id).then(r => createMarkupEventModal(r));
 
 });
-

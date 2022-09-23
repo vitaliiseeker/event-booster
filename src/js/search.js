@@ -17,8 +17,6 @@ const markupSelect = countries
 
 refSelectCountry.insertAdjacentHTML('beforeend', markupSelect);
 
-markupEvents.then(events => renderEvents(events));
-
 refSearchForm.addEventListener('submit', onSearch);
 refSearchForm.addEventListener('change', onSearch);
 

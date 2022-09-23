@@ -8,6 +8,7 @@ main {
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
   row-gap: 32px;
+
   padding-top: 30px;
 
   @include mq(tablet) {
@@ -90,11 +91,11 @@ main {
 }
 
 .card__img {
+  margin-top: 10px;
   width: 120px;
   height: 150px;
 
   border-radius: var(--main-radius);
-  margin-top: 10px;
 
   @include mq(tablet) {
     width: 141px;
@@ -128,11 +129,11 @@ main {
 .card__name {
   display: block;
 
+  padding: 5px 0;
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.2;
-
-  padding: 5px 0;
 
   color: var(--accent-color);
 
@@ -152,10 +153,10 @@ main {
 }
 
 .card__place {
+  padding: 5px 0;
+
   font-weight: 600;
   font-size: 12px;
-
-  padding: 5px 0;
 
   color: var(--light-color);
 
@@ -176,14 +177,11 @@ main {
   align-items: end;
   justify-content: center;
   gap: 5px;
-
-  list-style: none;
-
   padding: 60px 0;
+  list-style: none;
 }
 
 .pagination__btn {
-  border-radius: 10px 0;
   width: 30px;
   height: 30px;
 
@@ -193,13 +191,13 @@ main {
   color: var(--light-color);
   background-color: transparent;
   border: none;
+  border-radius: 10px 0;
   cursor: pointer;
+
+  transition: var(--animation);
 }
 
-.pagination__btn:hover {
-  color: var(--accent-color);
-}
-
+.pagination__btn:hover,
 .current {
   color: var(--accent-color);
   box-shadow: inset 0px 0px 5px 2px var(--box-shadow-color);
