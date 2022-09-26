@@ -47,7 +47,7 @@ refs.closeModalBtn.addEventListener('click', closeModalFooter);
 
 function openModalFooter() {
   refs.modal.classList.remove('is-hidden');
-  refs.modal.classList.add('animationFooter');
+  refs.modal.classList.add('animation-footer');
 
   document.addEventListener('keydown', isKeyPressedFooter);
   document.body.classList.add('no-scroll');
@@ -55,7 +55,7 @@ function openModalFooter() {
 
 function closeModalFooter() {
   refs.modal.classList.add('is-hidden');
-  refs.modal.classList.remove('animationFooter');
+  refs.modal.classList.remove('animation-footer');
 
   document.removeEventListener('keydown', isKeyPressedFooter);
   document.body.classList.remove('no-scroll');

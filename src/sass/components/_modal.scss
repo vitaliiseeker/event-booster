@@ -372,7 +372,7 @@
   }
 }
 
-.modal-footer_title {
+.modal-footer__title {
   margin-bottom: 20px;
 
   font-weight: 600;
@@ -395,7 +395,7 @@
   }
 }
 
-.footer-modal_img {
+.modal-footer__img {
   margin: 0;
   width: 100px;
   height: 150px;
@@ -415,12 +415,12 @@
   }
 }
 
-.footer-modal_list {
+.modal-footer__list {
   display: flex;
   flex-wrap: wrap;
 }
 
-.footer-modal_item {
+.modal-footer__item {
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 10px;
@@ -435,7 +435,7 @@
   }
 }
 
-.footer-modal_text {
+.modal-footer__text {
   width: 100px;
 
   font-size: 16px;
@@ -455,7 +455,7 @@
   }
 }
 
-.modal-footer_close {
+.modal-footer__close {
   position: absolute;
   top: 25px;
   right: 25px;
@@ -473,7 +473,7 @@
   }
 }
 
-.modal-footer_close-svg {
+.modal-footer__close-svg {
   width: 17px;
   height: 17px;
 
@@ -488,12 +488,6 @@
   &:hover {
     fill: var(--button-color);
   }
-}
-
-.animationFooter {
-  animation-duration: 0.55s;
-  animation-fill-mode: both;
-  animation-name: fadeInUpBig;
 }
 
 .animation {
@@ -513,6 +507,12 @@
   //  animation-name: rollIn;
   //  animation-name: slideInDown;
   // animation-name: slideInLeft;
+}
+
+.animation-footer {
+  animation-duration: 0.55s;
+  animation-fill-mode: both;
+  animation-name: fadeInUpBig;
 }
 
 @keyframes pulse {

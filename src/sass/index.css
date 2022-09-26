@@ -660,7 +660,7 @@ body {
   }
 }
 
-.modal-footer_title {
+.modal-footer__title {
   margin-bottom: 20px;
   font-weight: 600;
   font-size: 20px;
@@ -672,7 +672,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .modal-footer_title {
+  .modal-footer__title {
     margin-bottom: 25px;
     font-size: 30px;
     line-height: 20px;
@@ -680,12 +680,12 @@ body {
 }
 
 @media screen and (min-width: 1280px) {
-  .modal-footer_title {
+  .modal-footer__title {
     font-size: 40px;
   }
 }
 
-.footer-modal_img {
+.modal-footer__img {
   margin: 0;
   width: 100px;
   height: 150px;
@@ -695,44 +695,44 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .footer-modal_img {
+  .modal-footer__img {
     width: 150px;
     height: 200px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .footer-modal_img {
+  .modal-footer__img {
     width: 200px;
     height: 210px;
   }
 }
 
-.footer-modal_list {
+.modal-footer__list {
   display: flex;
   flex-wrap: wrap;
 }
 
-.footer-modal_item {
+.modal-footer__item {
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 10px;
 }
 
 @media screen and (min-width: 768px) {
-  .footer-modal_item {
+  .modal-footer__item {
     margin-bottom: 15px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .footer-modal_item {
+  .modal-footer__item {
     margin-bottom: 20px;
     width: 200px;
   }
 }
 
-.footer-modal_text {
+.modal-footer__text {
   width: 100px;
   font-size: 16px;
   line-height: 1.25;
@@ -741,20 +741,20 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .footer-modal_text {
+  .modal-footer__text {
     width: 150px;
     margin-top: 5px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .footer-modal_text {
+  .modal-footer__text {
     width: 200px;
     font-size: 20px;
   }
 }
 
-.modal-footer_close {
+.modal-footer__close {
   position: absolute;
   top: 25px;
   right: 25px;
@@ -766,31 +766,31 @@ body {
 }
 
 @media screen and (min-width: 1280px) {
-  .modal-footer_close {
+  .modal-footer__close {
     top: 30px;
     right: 30px;
   }
 }
 
-.modal-footer_close-svg {
+.modal-footer__close-svg {
   width: 17px;
   height: 17px;
   fill: var(--modal-secondary-color);
 }
 
 @media screen and (min-width: 1280px) {
-  .modal-footer_close-svg {
+  .modal-footer__close-svg {
     width: 20px;
     height: 20px;
   }
 }
 
-.modal-footer_close-svg:focus,
-.modal-footer_close-svg:hover {
+.modal-footer__close-svg:focus,
+.modal-footer__close-svg:hover {
   fill: var(--button-color);
 }
 
-.animationFooter {
+.animation-footer {
   animation-duration: 0.55s;
   animation-fill-mode: both;
   animation-name: fadeInUpBig;
@@ -1047,7 +1047,7 @@ body {
   }
 }
 
-.modal-footer_title {
+.modal-footer__title {
   margin-bottom: 20px;
   font-weight: 600;
   font-size: 20px;
@@ -1058,7 +1058,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .modal-footer_title {
+  .modal-footer__title {
     margin-bottom: 25px;
     font-size: 30px;
     line-height: 20px;
@@ -1066,12 +1066,12 @@ body {
 }
 
 @media screen and (min-width: 1280px) {
-  .modal-footer_title {
+  .modal-footer__title {
     font-size: 40px;
   }
 }
 
-.footer-modal_img {
+.modal-footer__img {
   margin: 0;
   width: 100px;
   height: 150px;
@@ -1081,44 +1081,44 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .footer-modal_img {
+  .modal-footer__img {
     width: 150px;
     height: 200px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .footer-modal_img {
+  .modal-footer__img {
     width: 200px;
     height: 210px;
   }
 }
 
-.footer-modal_list {
+.modal-footer__list {
   display: flex;
   flex-wrap: wrap;
 }
 
-.footer-modal_item {
+.modal-footer__item {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
 }
 
 @media screen and (min-width: 768px) {
-  .footer-modal_item {
+  .modal-footer__item {
     margin-bottom: 15px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .footer-modal_item {
+  .modal-footer__item {
     margin-bottom: 20px;
     width: 200px;
   }
 }
 
-.footer-modal_text {
+.modal-footer__text {
   width: 100px;
   font-size: 16px;
   line-height: 1.25;
@@ -1128,20 +1128,20 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .footer-modal_text {
+  .modal-footer__text {
     width: 150px;
     margin-top: 5px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .footer-modal_text {
+  .modal-footer__text {
     width: 200px;
     font-size: 20px;
   }
 }
 
-.modal-footer_close {
+.modal-footer__close {
   position: absolute;
   top: 25px;
   right: 25px;
@@ -1153,27 +1153,27 @@ body {
 }
 
 @media screen and (min-width: 1280px) {
-  .modal-footer_close {
+  .modal-footer__close {
     top: 30px;
     right: 30px;
   }
 }
 
-.modal-footer_close-svg {
+.modal-footer__close-svg {
   width: 17px;
   height: 17px;
   fill: var(--modal-secondary-color);
 }
 
 @media screen and (min-width: 1280px) {
-  .modal-footer_close-svg {
+  .modal-footer__close-svg {
     width: 20px;
     height: 20px;
   }
 }
 
-.modal-footer_close-svg:focus,
-.modal-footer_close-svg:hover {
+.modal-footer__close-svg:focus,
+.modal-footer__close-svg:hover {
   fill: var(--button-color);
 }
 
