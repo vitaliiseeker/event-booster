@@ -25,7 +25,7 @@ function scrollTo(to, duration = 700) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  let btn = document.querySelector('.scroll-up');
+  let btn = document.querySelector('.scroll-up__link');
   window.addEventListener('scroll', function () {
     if (pageYOffset > 300) {
       btn.classList.remove('visually-hidden');

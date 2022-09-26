@@ -1,4 +1,4 @@
-.scroll-up {
+.scroll-up__link {
   width: 70px;
   height: 70px;
   border: none;
@@ -19,7 +19,7 @@
   }
 }
 
-.scroll-up-svg {
+.scroll-up__svg {
   position: absolute;
   fill: var(--accent-color);
   width: 30px;
@@ -39,8 +39,8 @@
   }
 }
 
-.scroll-up-svg:hover,
-.scroll-up-svg:focus {
+.scroll-up__svg:hover,
+.scroll-up__svg:focus {
   border-radius: 50%;
   box-shadow: 0px 0px 15px 5px var(--accent-color),
 }

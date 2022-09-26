@@ -1,22 +1,22 @@
-<div class="container">
-  <form class="search-form js-search-form">
-    <div class="field">
-      <input class="search-input js-search-event" type="text" placeholder="Start searching" />
-      <button class="search-btn js-search-btn" type="submit">
-        <svg class="search-icon" width="12" height="12">
+<div class="container search">
+  <form class="search__form js-search-form">
+    <div class="search__field">
+      <input class="search__input js-search-event" type="text" placeholder="Start searching" />
+      <button class="search__btn js-search__btn" type="submit">
+        <svg class="search__icon" width="12" height="12">
           <use href="./images/sprite.svg#icon-search"></use>
         </svg>
       </button>
     </div>
 
-    <div class="field">
+    <div class="search__field">
       <select class="select-country js-select-country" id="select" name="selectInput" tabindex="1" data-choice="active">
-        <option class="value-country js-value-country" selected value="" selected>
+        <option class="select-country__value" selected value="" selected>
           Choose country
         </option>
       </select>
-      <label class="search-lbl">
-        <svg class="search-icon" width="15" height="10">
+      <label class="search__lbl">
+        <svg class="search__icon" width="15" height="10">
           <use href="./images/sprite.svg#open-select"></use>
         </svg>
       </label>
