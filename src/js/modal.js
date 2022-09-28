@@ -1,7 +1,6 @@
 import './modules/eventsApi';
 const refModal = document.querySelector('[data-modal]');
 const refCloseModal = document.querySelector('[data-modal-close]');
-// import createMarkupEventModal from './modules/markupEventModal';
 
 export function openModal() {
   refModal.classList.remove('is-hidden');
@@ -24,17 +23,6 @@ function isKeyPressed(e) {
     closeModal();
   }
 }
-
-// document.addEventListener('click', function (e) {
-//   const target = e.target;
-//   const its_btnMenu = target == refs.openModalBtn;
-//   const menu_is_active = refs.modal.classList.contains('is-hidden');
-//   const its_menu = target == refs.modal;
-
-//   if (!its_btnMenu && !menu_is_active && its_menu) {
-//     closeModal();
-//   }
-// });
 
 const refs = {
   openModalBtn: document.querySelector('[data-modal-footer-open]'),

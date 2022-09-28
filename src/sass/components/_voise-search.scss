@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.container-searh {
+  padding: 30px 50px;
+}
+
+#search-form {
+  width: 30%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#search-form input {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+}
+
+.voise-search .voise-microphone {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  // width: 3rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--secondary-text-color);
+
+  &:focus,
+  &:hover {
+    color: var(--accent-color);
+  }
+}
+
+.fas {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.fa-microphone:before {
+  content: "\1F399";
+}
+
+.fa-microphone-slash:before {
+  content: "\1F399";
+  color: var(--accent-color);
+}
+
+.info-hover {
+  color: var(--accent-color);
+}
+
+.info {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--secondary-text-color);
+}
+
+@media (max-width: 1200px) {
+  #search-form {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    // padding: 30px 35px;
+  }
+
+  #search-form {
+    width: 100%;
+  }
+
+  // .info {
+  //   font-size: 0.5rem;
+  // }
+}

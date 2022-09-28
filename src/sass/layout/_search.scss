@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 24px;
 
-  padding-bottom: 56px;
+  padding-bottom: 30px;
   background: transparent;
 
   @include mq(tablet) {
@@ -56,7 +56,7 @@
 .search__btn {
   position: absolute;
   top: 0;
-  right: 18px;
+  right: 28px;
 
   padding: 0;
   width: 40px;
