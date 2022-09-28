@@ -1,4 +1,4 @@
-import { onSearch } from './search.js';
+// import { onSearch } from './search.js';
 
 const searchForm = document.querySelector('.voise-search');
 const searchFormInput = searchForm.querySelector('.search__input'); // <=> document.querySelector("#search-form input");
