@@ -1,16 +1,27 @@
 <div class="container search">
   <form class="search__form js-search-form">
-    <div class="search__field">
-      <input class="search__input js-search-event" type="text" placeholder="Start searching" />
+    <div class="search__field voise-search">
+      <input
+        class="search__input js-search-event"
+        type="text"
+        placeholder="Start searching"
+      />
       <button class="search__btn js-search__btn" type="submit">
         <svg class="search__icon" width="12" height="12">
           <use href="./images/sprite.svg#icon-search"></use>
         </svg>
       </button>
+      <p class="info info-hover"></p>
     </div>
 
     <div class="search__field">
-      <select class="select-country js-select-country" id="select" name="selectInput" tabindex="1" data-choice="active">
+      <select
+        class="select-country js-select-country"
+        id="select"
+        name="selectInput"
+        tabindex="1"
+        data-choice="active"
+      >
         <option class="select-country__value" selected value="" selected>
           Choose country
         </option>

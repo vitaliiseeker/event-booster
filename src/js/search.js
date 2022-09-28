@@ -1,7 +1,7 @@
 import { EventsApi } from './modules/eventsApi';
 import countries from './data/countries.json';
 import { renderEvents, gallery } from '../js/modules/markupGallery';
-import { refPagination } from "./modules/markupPagination";
+import { refPagination } from './modules/markupPagination';
 import pictureWay from '../images/error.png';
 
 const refSearchForm = document.querySelector('.js-search-form');
@@ -20,7 +20,7 @@ refSelectCountry.insertAdjacentHTML('beforeend', markupSelect);
 refSearchForm.addEventListener('submit', onSearch);
 refSearchForm.addEventListener('change', onSearch);
 
-function onSearch(e) {
+export function onSearch(e) {
   e.preventDefault();
 
   const query = refSearchEvent.value;
